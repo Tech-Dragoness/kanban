@@ -60,6 +60,10 @@
           {
             "id": 9,
             "text": "Created UI and styling similar to phpMyAdmin, the gui format inspiration for this project."
+          },
+          {
+            "id": 10,
+            "text": "Added SQL and NoSQL databases differentiation and context switching between them."
           }
         ],
         "minor": []
@@ -67,7 +71,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 10,
+  "nextTaskId": 11,
   "dropdownStates": {
     "3-major": false
   }
