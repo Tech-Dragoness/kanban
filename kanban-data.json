@@ -114,13 +114,17 @@
           {
             "id": 22,
             "text": "Fix the issue of modify and delete button on documents not working in MongoDB."
+          },
+          {
+            "id": 23,
+            "text": "Check if NoSQL databases have issues of saving in the same folder like sql databases had issues with."
           }
         ]
       }
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 23,
+  "nextTaskId": 24,
   "dropdownStates": {
     "3-major": false
   }
