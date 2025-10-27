@@ -136,9 +136,9 @@
   "dropdownStates": {
     "3-major": true,
     "1-major": false,
-    "1-minor": true,
+    "1-minor": false,
     "2-major": true,
     "2-minor": true,
-    "3-minor": true
+    "3-minor": false
   }
 }
