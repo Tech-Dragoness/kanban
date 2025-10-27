@@ -8,6 +8,10 @@
           {
             "id": 1,
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
+          },
+          {
+            "id": 2,
+            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           }
         ],
         "minor": []
@@ -31,6 +35,6 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 2,
+  "nextTaskId": 3,
   "dropdownStates": {}
 }
