@@ -30,7 +30,12 @@
       "id": 2,
       "name": "In Progress",
       "tasks": {
-        "major": [],
+        "major": [
+          {
+            "id": 5,
+            "text": "Ability to view or create and open a database in a specific database type with a command on the cmd."
+          }
+        ],
         "minor": []
       }
     },
@@ -44,6 +49,6 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 5,
+  "nextTaskId": 6,
   "dropdownStates": {}
 }
