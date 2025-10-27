@@ -102,12 +102,17 @@
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 20,
+            "text": "Fixed issue of sql databases creating databases in the same folder (Causing unrelated dbs to show up in SQLite list of dbs)"
+          }
+        ]
       }
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 20,
+  "nextTaskId": 21,
   "dropdownStates": {
     "3-major": false
   }
