@@ -136,6 +136,7 @@
             user-select: none;
             transition: color 0.2s;
             padding: 4px;
+            pointer-events: none;
         }
 
         .column-drag-handle:hover {
@@ -143,6 +144,25 @@
         }
 
         .column-drag-handle:active {
+            cursor: grabbing;
+        }
+        
+        .column-drag-wrapper {
+            cursor: grab;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px;
+            margin: -4px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .column-drag-wrapper:hover {
+            background: #faf5ff;
+        }
+        
+        .column-drag-wrapper:active {
             cursor: grabbing;
         }
 
@@ -518,8 +538,10 @@
                 colDiv.innerHTML = `
                     <div class="column-header">
                         <div class="column-title-wrapper">
-                            <span class="column-drag-handle" draggable="true">⋮⋮</span>
-                            <div class="column-title">${col.name}</div>
+                            <div class="column-drag-wrapper" draggable="true">
+                                <span class="column-drag-handle">⋮⋮</span>
+                                <div class="column-title">${col.name}</div>
+                            </div>
                         </div>
                         <div style="display: flex; gap: 6px;">
                             <button class="icon-btn" onclick="event.stopPropagation(); renameColumn(${col.id})">✏️</button>
@@ -680,10 +702,10 @@
         }
 
         function attachColumnDragListeners() {
-            const dragHandles = document.querySelectorAll('.column-drag-handle');
-            dragHandles.forEach(handle => {
-                handle.addEventListener('dragstart', handleColumnDragStart);
-                handle.addEventListener('dragend', handleColumnDragEnd);
+            const dragWrappers = document.querySelectorAll('.column-drag-wrapper');
+            dragWrappers.forEach(wrapper => {
+                wrapper.addEventListener('dragstart', handleColumnDragStart);
+                wrapper.addEventListener('dragend', handleColumnDragEnd);
             });
 
             const columns = document.querySelectorAll('.column');
@@ -706,7 +728,7 @@
             draggedColumn = columns[draggedColumnIndex];
             column.classList.add('dragging-column');
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+            e.dataTransfer.setData('text/plain', '');
         }
 
         function handleColumnDragEnd(e) {
