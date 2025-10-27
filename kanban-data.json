@@ -134,6 +134,7 @@
   "nextColumnId": 5,
   "nextTaskId": 24,
   "dropdownStates": {
-    "3-major": true
+    "3-major": true,
+    "1-major": true
   }
 }
