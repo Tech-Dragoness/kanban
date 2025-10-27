@@ -388,9 +388,14 @@
 <body>
     <div class="header">
         <h1>My KanBan</h1>
-        <button class="btn" onclick="addColumn()">
-            ➕ Add Column
-        </button>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn" onclick="testConnection()" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af;">
+                🔍 Test Connection
+            </button>
+            <button class="btn" onclick="addColumn()">
+                ➕ Add Column
+            </button>
+        </div>
     </div>
 
     <div class="columns-container">
@@ -423,14 +428,19 @@
         let draggedColumnIndex = -1;
         let dropdownStates = {};
         let isDraggingColumn = false;
+        let isSaving = false;
 
         async function loadData() {
             try {
+                console.log('Loading data from:', API_URL);
                 const response = await fetch(`${API_URL}/api/data`);
+                
                 if (!response.ok) {
-                    throw new Error('Failed to load data from server');
+                    throw new Error(`Server returned ${response.status}`);
                 }
+                
                 const data = await response.json();
+                console.log('Loaded data:', data);
                 
                 columns = data.columns || [];
                 nextColumnId = data.nextColumnId || 1;
@@ -440,11 +450,17 @@
                 render();
             } catch (error) {
                 console.error('Error loading data:', error);
-                showError('Failed to load data from server. Please check your connection.');
+                showError(`Failed to load data: ${error.message}`);
             }
         }
 
         async function saveData() {
+            if (isSaving) {
+                console.log('Already saving, skipping...');
+                return;
+            }
+
+            isSaving = true;
             const data = {
                 columns: columns,
                 nextColumnId: nextColumnId,
@@ -453,6 +469,7 @@
             };
 
             try {
+                console.log('Saving data:', data);
                 const response = await fetch(`${API_URL}/api/data`, {
                     method: 'POST',
                     headers: {
@@ -461,12 +478,19 @@
                     body: JSON.stringify(data)
                 });
 
+                const result = await response.json();
+                console.log('Save response:', result);
+
                 if (!response.ok) {
-                    throw new Error('Failed to save data');
+                    throw new Error(result.error || 'Failed to save data');
                 }
+                
+                console.log('✓ Data saved successfully');
             } catch (error) {
                 console.error('Error saving data:', error);
-                alert('Failed to save data. Please try again.');
+                alert(`Failed to save data: ${error.message}\n\nPlease check console for details.`);
+            } finally {
+                isSaving = false;
             }
         }
 
@@ -881,6 +905,44 @@
                 confirmModal();
             }
         });
+
+        async function testConnection() {
+            const btn = event.target;
+            btn.textContent = '⏳ Testing...';
+            btn.disabled = true;
+
+            try {
+                // Test basic connection
+                const healthResponse = await fetch(`${API_URL}/`);
+                const healthData = await healthResponse.json();
+                
+                // Test GitHub connection if available
+                let githubStatus = 'Not configured';
+                try {
+                    const githubResponse = await fetch(`${API_URL}/api/test-github`);
+                    const githubData = await githubResponse.json();
+                    githubStatus = githubData.connected ? '✓ Connected' : '✗ ' + (githubData.error || 'Failed');
+                } catch (e) {
+                    githubStatus = '✗ Error: ' + e.message;
+                }
+
+                alert(`🔍 Connection Test Results:\n\n` +
+                      `API Status: ${healthData.status}\n` +
+                      `Storage: ${healthData.storage}\n` +
+                      `GitHub: ${githubStatus}\n` +
+                      `Repo: ${healthData.github_repo || 'Not set'}\n` +
+                      `Token: ${healthData.github_token || 'Not set'}\n\n` +
+                      `Check browser console (F12) for detailed logs.`);
+                
+                console.log('Health check:', healthData);
+            } catch (error) {
+                alert(`❌ Connection Failed!\n\n${error.message}\n\nAPI URL: ${API_URL}\n\nCheck:\n1. Is backend running?\n2. Is API_URL correct?\n3. CORS enabled?`);
+                console.error('Connection test failed:', error);
+            } finally {
+                btn.textContent = '🔍 Test Connection';
+                btn.disabled = false;
+            }
+        }
 
         loadData();
     </script>
