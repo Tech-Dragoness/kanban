@@ -108,16 +108,16 @@
             "text": "Fix the issue of 0 documents showing in collection_list"
           },
           {
+            "id": 20,
+            "text": "Fixed issue of sql databases creating databases in the same folder (Causing unrelated dbs to show up in SQLite list of dbs)"
+          },
+          {
             "id": 22,
             "text": "Fix the issue of modify and delete button on documents not working in MongoDB."
           },
           {
             "id": 23,
             "text": "Check if NoSQL databases have issues of saving in the same folder like sql databases had issues with."
-          },
-          {
-            "id": 20,
-            "text": "Fixed issue of sql databases creating databases in the same folder (Causing unrelated dbs to show up in SQLite list of dbs)"
           }
         ]
       }
