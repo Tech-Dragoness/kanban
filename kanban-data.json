@@ -68,6 +68,10 @@
           {
             "id": 11,
             "text": "Separated logic for SQL and NoSQL into sql_handler and nosql_handler, app.py for main work and differentiating to the two handlers."
+          },
+          {
+            "id": 12,
+            "text": "Added logic in both handlers to use db_handler and give work to the required handler to handle database-specific requests."
           }
         ],
         "minor": []
@@ -75,7 +79,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 12,
+  "nextTaskId": 13,
   "dropdownStates": {
     "3-major": false
   }
