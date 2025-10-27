@@ -135,6 +135,8 @@
   "nextTaskId": 24,
   "dropdownStates": {
     "3-major": true,
-    "1-major": true
+    "1-major": true,
+    "1-minor": true,
+    "2-major": true
   }
 }
