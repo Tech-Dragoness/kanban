@@ -44,6 +44,10 @@
           {
             "id": 7,
             "text": "1.\tFix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
+          },
+          {
+            "id": 8,
+            "text": "2.\tFix the handler name shown on the sidebar that shows no handler everywhere except on the home page."
           }
         ]
       }
@@ -58,6 +62,6 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 8,
+  "nextTaskId": 9,
   "dropdownStates": {}
 }
