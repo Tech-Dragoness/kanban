@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My KanBan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #f3e8ff;
+        }
+
+        .header h1 {
+            color: #9333ea;
+            font-size: 28px;
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+            color: #7c3aed;
+            border: 1px solid #e9d5ff;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #ddd6fe 0%, #e9d5ff 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(139, 92, 246, 0.15);
+        }
+
+        .btn-small {
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+
+        .columns-container {
+            overflow-x: auto;
+            overflow-y: visible;
+            white-space: nowrap;
+            padding-bottom: 20px;
+        }
+
+        .columns-wrapper {
+            display: inline-flex;
+            gap: 20px;
+            min-width: 100%;
+        }
+
+        .column {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 320px;
+            max-width: 400px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.08);
+            display: inline-block;
+            vertical-align: top;
+            white-space: normal;
+            border: 1px solid #f3e8ff;
+            cursor: move;
+            transition: all 0.2s;
+        }
+
+        .column:hover {
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.12);
+        }
+
+        .column.dragging-column {
+            opacity: 0.5;
+        }
+
+        .column-drop-indicator {
+            width: 4px;
+            background: linear-gradient(180deg, #e9d5ff 0%, #c4b5fd 50%, #e9d5ff 100%);
+            border-radius: 2px;
+            display: none;
+            align-self: stretch;
+        }
+
+        .column-drop-indicator.active {
+            display: block;
+        }
+
+        .column-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .column-title {
+            color: #7c3aed;
+            font-size: 20px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 6px;
+            color: #a78bfa;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .icon-btn:hover {
+            color: #7c3aed;
+            background: #faf5ff;
+        }
+
+        .dropdown {
+            margin-bottom: 16px;
+        }
+
+        .dropdown-header {
+            background: linear-gradient(135deg, #f3e8ff 0%, #fae8ff 100%);
+            color: #7c3aed;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 8px;
+            border: 1px solid #e9d5ff;
+            transition: all 0.2s;
+        }
+
+        .dropdown-header:hover {
+            background: linear-gradient(135deg, #e9d5ff 0%, #f3e8ff 100%);
+        }
+
+        .dropdown-content {
+            padding: 8px 0;
+            min-height: 40px;
+        }
+
+        .dropdown-content.collapsed {
+            display: none;
+        }
+
+        .empty-dropzone {
+            border: 2px dashed #e9d5ff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            color: #c4b5fd;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .empty-dropzone.drag-over {
+            border-color: #a78bfa;
+            background: #fdfbff;
+            color: #7c3aed;
+        }
+
+        .task {
+            background: #fefefe;
+            border: 1.5px solid #f3e8ff;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+            cursor: default;
+        }
+
+        .task:hover {
+            border-color: #e9d5ff;
+            box-shadow: 0 2px 6px rgba(139, 92, 246, 0.1);
+            background: #fdfbff;
+        }
+
+        .task.dragging {
+            opacity: 0.5;
+            cursor: grabbing;
+        }
+
+        .task-drag {
+            cursor: grab;
+            color: #c4b5fd;
+            font-size: 20px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        .task-drag:hover {
+            color: #a78bfa;
+        }
+
+        .task-drag:active {
+            cursor: grabbing;
+        }
+
+        .task-number {
+            font-weight: 600;
+            color: #9333ea;
+            min-width: 24px;
+        }
+
+        .task-text {
+            flex: 1;
+            word-wrap: break-word;
+            white-space: normal;
+            color: #6b21a8;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .drop-indicator {
+            height: 3px;
+            background: linear-gradient(90deg, #e9d5ff 0%, #c4b5fd 50%, #e9d5ff 100%);
+            margin: 4px 0;
+            border-radius: 2px;
+            display: none;
+        }
+
+        .drop-indicator.active {
+            display: block;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(124, 58, 237, 0.2);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+            border: 1px solid #f3e8ff;
+        }
+
+        .modal-title {
+            color: #7c3aed;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #e9d5ff;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+            color: #6b21a8;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: #c4b5fd;
+            background: #fdfbff;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .btn-cancel {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            color: #6b7280;
+            border: 1px solid #e5e7eb;
+        }
+
+        .btn-cancel:hover {
+            background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+        }
+
+        .drag-ghost {
+            position: fixed;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.9;
+            transform: translate(-50%, -50%);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7c3aed;
+            font-size: 18px;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .column {
+                min-width: 280px;
+            }
+
+            .modal {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .column {
+                min-width: 260px;
+                padding: 15px;
+            }
+
+            .column-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My KanBan</h1>
+        <button class="btn" onclick="addColumn()">
+            ➕ Add Column
+        </button>
+    </div>
+
+    <div class="columns-container">
+        <div class="columns-wrapper" id="columnsWrapper">
+            <div class="loading">Loading your KanBan board...</div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-title" id="modalTitle">Enter Name</div>
+            <input type="text" class="modal-input" id="modalInput" placeholder="Enter text...">
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn" onclick="confirmModal()">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration - Change this to your Render backend URL after deployment
+        const API_URL = window.location.origin; // Uses same origin by default
+        // For development, you might use: const API_URL = 'http://localhost:5000';
+
+        let columns = [];
+        let nextColumnId = 1;
+        let nextTaskId = 1;
+        let modalCallback = null;
+        let draggedTask = null;
+        let draggedFrom = null;
+        let dragGhost = null;
+        let draggedColumn = null;
+        let draggedColumnIndex = -1;
+        let dropdownStates = {};
+
+        // Load data from backend
+        async function loadData() {
+            try {
+                const response = await fetch(`${API_URL}/api/data`);
+                if (!response.ok) {
+                    throw new Error('Failed to load data from server');
+                }
+                const data = await response.json();
+                
+                columns = data.columns || [];
+                nextColumnId = data.nextColumnId || 1;
+                nextTaskId = data.nextTaskId || 1;
+                dropdownStates = data.dropdownStates || {};
+                
+                render();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showError('Failed to load data from server. Please check your connection.');
+            }
+        }
+
+        // Save data to backend
+        async function saveData() {
+            const data = {
+                columns: columns,
+                nextColumnId: nextColumnId,
+                nextTaskId: nextTaskId,
+                dropdownStates: dropdownStates
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/api/data`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save data');
+                }
+
+                console.log('Data saved successfully');
+            } catch (error) {
+                console.error('Error saving data:', error);
+                alert('Failed to save data. Please try again.');
+            }
+        }
+
+        function showError(message) {
+            const wrapper = document.getElementById('columnsWrapper');
+            wrapper.innerHTML = `<div class="error-message">${message}</div>`;
+        }
+
+        function render() {
+            const wrapper = document.getElementById('columnsWrapper');
+            wrapper.innerHTML = '';
+
+            columns.forEach((col, index) => {
+                const dropIndicator = document.createElement('div');
+                dropIndicator.className = 'column-drop-indicator';
+                dropIndicator.dataset.index = index;
+                wrapper.appendChild(dropIndicator);
+
+                const colDiv = document.createElement('div');
+                colDiv.className = 'column';
+                colDiv.dataset.columnId = col.id;
+                colDiv.dataset.columnIndex = index;
+                colDiv.draggable = true;
+
+                const majorKey = `${col.id}-major`;
+                const minorKey = `${col.id}-minor`;
+                const majorCollapsed = dropdownStates[majorKey] === true ? 'collapsed' : '';
+                const minorCollapsed = dropdownStates[minorKey] === true ? 'collapsed' : '';
+
+                colDiv.innerHTML = `
+                    <div class="column-header">
+                        <div class="column-title">${col.name}</div>
+                        <div style="display: flex; gap: 6px;">
+                            <button class="icon-btn" onclick="event.stopPropagation(); renameColumn(${col.id})">✏️</button>
+                            <button class="icon-btn" onclick="event.stopPropagation(); deleteColumn(${col.id})">❌</button>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown-header" onclick="toggleDropdown(this, ${col.id}, 'major')">
+                            <span>Major</span>
+                            <button class="btn btn-small" onclick="event.stopPropagation(); addTask(${col.id}, 'major')">➕</button>
+                        </div>
+                        <div class="dropdown-content ${majorCollapsed}" data-column-id="${col.id}" data-type="major">
+                            ${renderTasks(col.tasks.major, col.id, 'major')}
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown-header" onclick="toggleDropdown(this, ${col.id}, 'minor')">
+                            <span>Minor</span>
+                            <button class="btn btn-small" onclick="event.stopPropagation(); addTask(${col.id}, 'minor')">➕</button>
+                        </div>
+                        <div class="dropdown-content ${minorCollapsed}" data-column-id="${col.id}" data-type="minor">
+                            ${renderTasks(col.tasks.minor, col.id, 'minor')}
+                        </div>
+                    </div>
+                `;
+
+                wrapper.appendChild(colDiv);
+            });
+
+            const finalDropIndicator = document.createElement('div');
+            finalDropIndicator.className = 'column-drop-indicator';
+            finalDropIndicator.dataset.index = columns.length;
+            wrapper.appendChild(finalDropIndicator);
+
+            attachDragListeners();
+            attachColumnDragListeners();
+        }
+
+        function renderTasks(tasks, columnId, type) {
+            if (tasks.length === 0) {
+                return `
+                    <div class="drop-indicator" data-column-id="${columnId}" data-type="${type}" data-index="0"></div>
+                    <div class="empty-dropzone" data-column-id="${columnId}" data-type="${type}">
+                        Drop tasks here
+                    </div>
+                `;
+            }
+
+            return tasks.map((task, index) => `
+                <div class="drop-indicator" data-column-id="${columnId}" data-type="${type}" data-index="${index}"></div>
+                <div class="task" data-task-id="${task.id}" data-column-id="${columnId}" data-type="${type}" draggable="true">
+                    <span class="task-drag">⋮⋮</span>
+                    <span class="task-number">${index + 1}.</span>
+                    <span class="task-text">${task.text}</span>
+                    <div class="task-actions">
+                        <button class="icon-btn" onclick="editTask(${task.id}, ${columnId}, '${type}')">✏️</button>
+                        <button class="icon-btn" onclick="deleteTask(${task.id}, ${columnId}, '${type}')">❌</button>
+                    </div>
+                </div>
+            `).join('') + `<div class="drop-indicator" data-column-id="${columnId}" data-type="${type}" data-index="${tasks.length}"></div>`;
+        }
+
+        function toggleDropdown(header, columnId, type) {
+            const content = header.nextElementSibling;
+            const key = `${columnId}-${type}`;
+            
+            content.classList.toggle('collapsed');
+            dropdownStates[key] = content.classList.contains('collapsed');
+            saveData();
+        }
+
+        function showModal(title, placeholder, callback, defaultValue = '') {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalInput').placeholder = placeholder;
+            document.getElementById('modalInput').value = defaultValue;
+            document.getElementById('modalOverlay').classList.add('active');
+            document.getElementById('modalInput').focus();
+            modalCallback = callback;
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            modalCallback = null;
+        }
+
+        function confirmModal() {
+            const value = document.getElementById('modalInput').value.trim();
+            if (value && modalCallback) {
+                modalCallback(value);
+            } else if (!value) {
+                alert('Please enter a valid value!');
+                return;
+            }
+            closeModal();
+        }
+
+        function addColumn() {
+            showModal('Add Column', 'Enter column name...', (name) => {
+                columns.push({
+                    id: nextColumnId++,
+                    name: name,
+                    tasks: { major: [], minor: [] }
+                });
+                render();
+                saveData();
+            });
+        }
+
+        function renameColumn(id) {
+            const col = columns.find(c => c.id === id);
+            showModal('Rename Column', 'Enter new name...', (name) => {
+                col.name = name;
+                render();
+                saveData();
+            }, col.name);
+        }
+
+        function deleteColumn(id) {
+            if (confirm('Are you sure you want to delete this column and all its tasks?')) {
+                delete dropdownStates[`${id}-major`];
+                delete dropdownStates[`${id}-minor`];
+                
+                columns = columns.filter(c => c.id !== id);
+                render();
+                saveData();
+            }
+        }
+
+        function addTask(columnId, type) {
+            showModal('Add Task', 'Enter task description...', (text) => {
+                const col = columns.find(c => c.id === columnId);
+                col.tasks[type].push({
+                    id: nextTaskId++,
+                    text: text
+                });
+                render();
+                saveData();
+            });
+        }
+
+        function editTask(taskId, columnId, type) {
+            const col = columns.find(c => c.id === columnId);
+            const task = col.tasks[type].find(t => t.id === taskId);
+            showModal('Edit Task', 'Enter task description...', (text) => {
+                task.text = text;
+                render();
+                saveData();
+            }, task.text);
+        }
+
+        function deleteTask(taskId, columnId, type) {
+            if (confirm('Are you sure you want to delete this task?')) {
+                const col = columns.find(c => c.id === columnId);
+                col.tasks[type] = col.tasks[type].filter(t => t.id !== taskId);
+                render();
+                saveData();
+            }
+        }
+
+        function attachColumnDragListeners() {
+            const columnElems = document.querySelectorAll('.column');
+            columnElems.forEach(col => {
+                col.addEventListener('dragstart', handleColumnDragStart);
+                col.addEventListener('dragend', handleColumnDragEnd);
+                col.addEventListener('dragover', handleColumnDragOver);
+            });
+
+            const columnIndicators = document.querySelectorAll('.column-drop-indicator');
+            columnIndicators.forEach(indicator => {
+                indicator.addEventListener('dragover', handleColumnIndicatorDragOver);
+                indicator.addEventListener('drop', handleColumnIndicatorDrop);
+            });
+        }
+
+        function handleColumnDragStart(e) {
+            if (e.target.classList.contains('task') || e.target.closest('.task')) {
+                return;
+            }
+
+            draggedColumnIndex = parseInt(this.dataset.columnIndex);
+            draggedColumn = columns[draggedColumnIndex];
+            this.classList.add('dragging-column');
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleColumnDragEnd(e) {
+            this.classList.remove('dragging-column');
+            document.querySelectorAll('.column-drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+            draggedColumn = null;
+            draggedColumnIndex = -1;
+        }
+
+        function handleColumnDragOver(e) {
+            if (!draggedColumn) return;
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        function handleColumnIndicatorDragOver(e) {
+            if (!draggedColumn) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            document.querySelectorAll('.column-drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+
+        function handleColumnIndicatorDrop(e) {
+            if (!draggedColumn) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            const targetIndex = parseInt(this.dataset.index);
+            columns.splice(draggedColumnIndex, 1);
+            const newIndex = targetIndex > draggedColumnIndex ? targetIndex - 1 : targetIndex;
+            columns.splice(newIndex, 0, draggedColumn);
+
+            render();
+            saveData();
+        }
+
+        function attachDragListeners() {
+            const tasks = document.querySelectorAll('.task');
+            tasks.forEach(task => {
+                task.addEventListener('dragstart', handleDragStart);
+                task.addEventListener('dragend', handleDragEnd);
+                task.addEventListener('dragover', handleDragOver);
+                task.addEventListener('drop', handleDrop);
+            });
+
+            const dropIndicators = document.querySelectorAll('.drop-indicator');
+            dropIndicators.forEach(indicator => {
+                indicator.addEventListener('dragover', handleIndicatorDragOver);
+                indicator.addEventListener('drop', handleIndicatorDrop);
+            });
+
+            const emptyDropzones = document.querySelectorAll('.empty-dropzone');
+            emptyDropzones.forEach(zone => {
+                zone.addEventListener('dragover', handleEmptyZoneDragOver);
+                zone.addEventListener('dragleave', handleEmptyZoneDragLeave);
+                zone.addEventListener('drop', handleEmptyZoneDrop);
+            });
+        }
+
+        function handleEmptyZoneDragOver(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (draggedTask) {
+                this.classList.add('drag-over');
+            }
+        }
+
+        function handleEmptyZoneDragLeave(e) {
+            this.classList.remove('drag-over');
+        }
+
+        function handleEmptyZoneDrop(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.remove('drag-over');
+
+            const targetColumnId = parseInt(this.dataset.columnId);
+            const targetType = this.dataset.type;
+
+            moveTask(targetColumnId, targetType, 0);
+        }
+
+        function handleDragStart(e) {
+            e.stopPropagation();
+            draggedTask = {
+                id: parseInt(this.dataset.taskId),
+                columnId: parseInt(this.dataset.columnId),
+                type: this.dataset.type
+            };
+            draggedFrom = { ...draggedTask };
+            this.classList.add('dragging');
+
+            dragGhost = this.cloneNode(true);
+            dragGhost.classList.add('drag-ghost');
+            dragGhost.style.width = this.offsetWidth + 'px';
+            document.body.appendChild(dragGhost);
+
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setDragImage(new Image(), 0, 0);
+        }
+
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+            document.querySelectorAll('.drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+            document.querySelectorAll('.empty-dropzone').forEach(zone => {
+                zone.classList.remove('drag-over');
+            });
+            if (dragGhost) {
+                dragGhost.remove();
+                dragGhost = null;
+            }
+        }
+
+        function handleDragOver(e) {
+            if (!draggedTask) return;
+            e.preventDefault();
+            e.stopPropagation();
+            e.dataTransfer.dropEffect = 'move';
+
+            if (dragGhost) {
+                dragGhost.style.left = e.clientX + 'px';
+                dragGhost.style.top = e.clientY + 'px';
+            }
+
+            const rect = this.getBoundingClientRect();
+            const midpoint = rect.top + rect.height / 2;
+            
+            const indicator = e.clientY < midpoint 
+                ? this.previousElementSibling 
+                : this.nextElementSibling;
+
+            document.querySelectorAll('.drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+
+            if (indicator && indicator.classList.contains('drop-indicator')) {
+                indicator.classList.add('active');
+            }
+        }
+
+        function handleDrop(e) {
+            if (!draggedTask) return;
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const rect = this.getBoundingClientRect();
+            const midpoint = rect.top + rect.height / 2;
+            
+            const targetColumnId = parseInt(this.dataset.columnId);
+            const targetType = this.dataset.type;
+            const targetCol = columns.find(c => c.id === targetColumnId);
+            const targetIndex = targetCol.tasks[targetType].findIndex(t => t.id === parseInt(this.dataset.taskId));
+
+            moveTask(targetColumnId, targetType, e.clientY < midpoint ? targetIndex : targetIndex + 1);
+        }
+
+        function handleIndicatorDragOver(e) {
+            if (!draggedTask) return;
+            e.preventDefault();
+            e.stopPropagation();
+            e.dataTransfer.dropEffect = 'move';
+
+            if (dragGhost) {
+                dragGhost.style.left = e.clientX + 'px';
+                dragGhost.style.top = e.clientY + 'px';
+            }
+
+            document.querySelectorAll('.drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+
+        function handleIndicatorDrop(e) {
+            if (!draggedTask) return;
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const targetColumnId = parseInt(this.dataset.columnId);
+            const targetType = this.dataset.type;
+            const targetIndex = parseInt(this.dataset.index);
+
+            moveTask(targetColumnId, targetType, targetIndex);
+        }
+
+        function moveTask(targetColumnId, targetType, targetIndex) {
+            const sourceCol = columns.find(c => c.id === draggedFrom.columnId);
+            const targetCol = columns.find(c => c.id === targetColumnId);
+
+            const task = sourceCol.tasks[draggedFrom.type].find(t => t.id === draggedTask.id);
+            sourceCol.tasks[draggedFrom.type] = sourceCol.tasks[draggedFrom.type].filter(t => t.id !== draggedTask.id);
+
+            if (draggedFrom.columnId === targetColumnId && draggedFrom.type === targetType) {
+                const originalIndex = sourceCol.tasks[draggedFrom.type].findIndex((t, i) => i >= targetIndex);
+                if (originalIndex !== -1 && targetIndex > 0) {
+                    targetIndex = Math.max(0, targetIndex - 1);
+                }
+            }
+
+            targetCol.tasks[targetType].splice(targetIndex, 0, task);
+
+            render();
+            saveData();
+        }
+
+        document.getElementById('modalInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                confirmModal();
+            }
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (dragGhost) {
+                dragGhost.style.left = e.clientX + 'px';
+                dragGhost.style.top = e.clientY + 'px';
+            }
+        });
+
+        // Load data when page loads
+        loadData();
+    </script>
+</body>
+</html>
