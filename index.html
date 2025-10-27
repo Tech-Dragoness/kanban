@@ -88,7 +88,6 @@
             vertical-align: top;
             white-space: normal;
             border: 1px solid #f3e8ff;
-            cursor: move;
             transition: all 0.2s;
         }
 
@@ -97,7 +96,8 @@
         }
 
         .column.dragging-column {
-            opacity: 0.5;
+            opacity: 0.4;
+            cursor: grabbing;
         }
 
         .column-drop-indicator {
@@ -106,6 +106,7 @@
             border-radius: 2px;
             display: none;
             align-self: stretch;
+            min-height: 200px;
         }
 
         .column-drop-indicator.active {
@@ -118,6 +119,30 @@
             justify-content: space-between;
             margin-bottom: 20px;
             gap: 10px;
+        }
+
+        .column-title-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1;
+        }
+
+        .column-drag-handle {
+            cursor: grab;
+            color: #c4b5fd;
+            font-size: 20px;
+            user-select: none;
+            transition: color 0.2s;
+            padding: 4px;
+        }
+
+        .column-drag-handle:hover {
+            color: #a78bfa;
+        }
+
+        .column-drag-handle:active {
+            cursor: grabbing;
         }
 
         .column-title {
@@ -329,14 +354,6 @@
             background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
         }
 
-        .drag-ghost {
-            position: fixed;
-            pointer-events: none;
-            z-index: 999;
-            opacity: 0.9;
-            transform: translate(-50%, -50%);
-        }
-
         .loading {
             text-align: center;
             padding: 40px;
@@ -364,29 +381,6 @@
 
             .modal {
                 padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-
-            .header {
-                padding: 15px;
-            }
-
-            .header h1 {
-                font-size: 18px;
-            }
-
-            .column {
-                min-width: 260px;
-                padding: 15px;
-            }
-
-            .column-title {
-                font-size: 18px;
             }
         }
     </style>
@@ -417,9 +411,7 @@
     </div>
 
     <script>
-        // Configuration - Change this to your Render backend URL after deployment
-        const API_URL = 'https://kanban-i9r1.onrender.com'; // Uses same origin by default
-        // For development, you might use: const API_URL = 'http://localhost:5000';
+        const API_URL = 'https://kanban-i9r1.onrender.com';
 
         let columns = [];
         let nextColumnId = 1;
@@ -427,12 +419,11 @@
         let modalCallback = null;
         let draggedTask = null;
         let draggedFrom = null;
-        let dragGhost = null;
         let draggedColumn = null;
         let draggedColumnIndex = -1;
         let dropdownStates = {};
+        let isDraggingColumn = false;
 
-        // Load data from backend
         async function loadData() {
             try {
                 const response = await fetch(`${API_URL}/api/data`);
@@ -453,7 +444,6 @@
             }
         }
 
-        // Save data to backend
         async function saveData() {
             const data = {
                 columns: columns,
@@ -474,8 +464,6 @@
                 if (!response.ok) {
                     throw new Error('Failed to save data');
                 }
-
-                console.log('Data saved successfully');
             } catch (error) {
                 console.error('Error saving data:', error);
                 alert('Failed to save data. Please try again.');
@@ -501,7 +489,6 @@
                 colDiv.className = 'column';
                 colDiv.dataset.columnId = col.id;
                 colDiv.dataset.columnIndex = index;
-                colDiv.draggable = true;
 
                 const majorKey = `${col.id}-major`;
                 const minorKey = `${col.id}-minor`;
@@ -510,7 +497,10 @@
 
                 colDiv.innerHTML = `
                     <div class="column-header">
-                        <div class="column-title">${col.name}</div>
+                        <div class="column-title-wrapper">
+                            <span class="column-drag-handle" draggable="true">⋮⋮</span>
+                            <div class="column-title">${col.name}</div>
+                        </div>
                         <div style="display: flex; gap: 6px;">
                             <button class="icon-btn" onclick="event.stopPropagation(); renameColumn(${col.id})">✏️</button>
                             <button class="icon-btn" onclick="event.stopPropagation(); deleteColumn(${col.id})">❌</button>
@@ -560,8 +550,8 @@
 
             return tasks.map((task, index) => `
                 <div class="drop-indicator" data-column-id="${columnId}" data-type="${type}" data-index="${index}"></div>
-                <div class="task" data-task-id="${task.id}" data-column-id="${columnId}" data-type="${type}" draggable="true">
-                    <span class="task-drag">⋮⋮</span>
+                <div class="task" data-task-id="${task.id}" data-column-id="${columnId}" data-type="${type}">
+                    <span class="task-drag" draggable="true">⋮⋮</span>
                     <span class="task-number">${index + 1}.</span>
                     <span class="task-text">${task.text}</span>
                     <div class="task-actions">
@@ -670,11 +660,10 @@
         }
 
         function attachColumnDragListeners() {
-            const columnElems = document.querySelectorAll('.column');
-            columnElems.forEach(col => {
-                col.addEventListener('dragstart', handleColumnDragStart);
-                col.addEventListener('dragend', handleColumnDragEnd);
-                col.addEventListener('dragover', handleColumnDragOver);
+            const dragHandles = document.querySelectorAll('.column-drag-handle');
+            dragHandles.forEach(handle => {
+                handle.addEventListener('dragstart', handleColumnDragStart);
+                handle.addEventListener('dragend', handleColumnDragEnd);
             });
 
             const columnIndicators = document.querySelectorAll('.column-drop-indicator');
@@ -685,29 +674,24 @@
         }
 
         function handleColumnDragStart(e) {
-            if (e.target.classList.contains('task') || e.target.closest('.task')) {
-                return;
-            }
-
-            draggedColumnIndex = parseInt(this.dataset.columnIndex);
+            isDraggingColumn = true;
+            const column = this.closest('.column');
+            draggedColumnIndex = parseInt(column.dataset.columnIndex);
             draggedColumn = columns[draggedColumnIndex];
-            this.classList.add('dragging-column');
+            column.classList.add('dragging-column');
             e.dataTransfer.effectAllowed = 'move';
+            e.stopPropagation();
         }
 
         function handleColumnDragEnd(e) {
-            this.classList.remove('dragging-column');
+            isDraggingColumn = false;
+            const column = this.closest('.column');
+            column.classList.remove('dragging-column');
             document.querySelectorAll('.column-drop-indicator').forEach(ind => {
                 ind.classList.remove('active');
             });
             draggedColumn = null;
             draggedColumnIndex = -1;
-        }
-
-        function handleColumnDragOver(e) {
-            if (!draggedColumn) return;
-            e.preventDefault();
-            e.stopPropagation();
         }
 
         function handleColumnIndicatorDragOver(e) {
@@ -736,12 +720,16 @@
         }
 
         function attachDragListeners() {
+            const taskDragHandles = document.querySelectorAll('.task-drag');
+            taskDragHandles.forEach(handle => {
+                handle.addEventListener('dragstart', handleTaskDragStart);
+                handle.addEventListener('dragend', handleTaskDragEnd);
+            });
+
             const tasks = document.querySelectorAll('.task');
             tasks.forEach(task => {
-                task.addEventListener('dragstart', handleDragStart);
-                task.addEventListener('dragend', handleDragEnd);
-                task.addEventListener('dragover', handleDragOver);
-                task.addEventListener('drop', handleDrop);
+                task.addEventListener('dragover', handleTaskDragOver);
+                task.addEventListener('drop', handleTaskDrop);
             });
 
             const dropIndicators = document.querySelectorAll('.drop-indicator');
@@ -758,12 +746,36 @@
             });
         }
 
+        function handleTaskDragStart(e) {
+            const task = this.closest('.task');
+            draggedTask = {
+                id: parseInt(task.dataset.taskId),
+                columnId: parseInt(task.dataset.columnId),
+                type: task.dataset.type
+            };
+            draggedFrom = { ...draggedTask };
+            task.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.stopPropagation();
+        }
+
+        function handleTaskDragEnd(e) {
+            const task = this.closest('.task');
+            task.classList.remove('dragging');
+            document.querySelectorAll('.drop-indicator').forEach(ind => {
+                ind.classList.remove('active');
+            });
+            document.querySelectorAll('.empty-dropzone').forEach(zone => {
+                zone.classList.remove('drag-over');
+            });
+            draggedTask = null;
+        }
+
         function handleEmptyZoneDragOver(e) {
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
-            if (draggedTask) {
-                this.classList.add('drag-over');
-            }
+            this.classList.add('drag-over');
         }
 
         function handleEmptyZoneDragLeave(e) {
@@ -771,6 +783,7 @@
         }
 
         function handleEmptyZoneDrop(e) {
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
             this.classList.remove('drag-over');
@@ -781,49 +794,11 @@
             moveTask(targetColumnId, targetType, 0);
         }
 
-        function handleDragStart(e) {
-            e.stopPropagation();
-            draggedTask = {
-                id: parseInt(this.dataset.taskId),
-                columnId: parseInt(this.dataset.columnId),
-                type: this.dataset.type
-            };
-            draggedFrom = { ...draggedTask };
-            this.classList.add('dragging');
-
-            dragGhost = this.cloneNode(true);
-            dragGhost.classList.add('drag-ghost');
-            dragGhost.style.width = this.offsetWidth + 'px';
-            document.body.appendChild(dragGhost);
-
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setDragImage(new Image(), 0, 0);
-        }
-
-        function handleDragEnd(e) {
-            this.classList.remove('dragging');
-            document.querySelectorAll('.drop-indicator').forEach(ind => {
-                ind.classList.remove('active');
-            });
-            document.querySelectorAll('.empty-dropzone').forEach(zone => {
-                zone.classList.remove('drag-over');
-            });
-            if (dragGhost) {
-                dragGhost.remove();
-                dragGhost = null;
-            }
-        }
-
-        function handleDragOver(e) {
-            if (!draggedTask) return;
+        function handleTaskDragOver(e) {
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
             e.dataTransfer.dropEffect = 'move';
-
-            if (dragGhost) {
-                dragGhost.style.left = e.clientX + 'px';
-                dragGhost.style.top = e.clientY + 'px';
-            }
 
             const rect = this.getBoundingClientRect();
             const midpoint = rect.top + rect.height / 2;
@@ -841,8 +816,8 @@
             }
         }
 
-        function handleDrop(e) {
-            if (!draggedTask) return;
+        function handleTaskDrop(e) {
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
             
@@ -858,15 +833,10 @@
         }
 
         function handleIndicatorDragOver(e) {
-            if (!draggedTask) return;
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
             e.dataTransfer.dropEffect = 'move';
-
-            if (dragGhost) {
-                dragGhost.style.left = e.clientX + 'px';
-                dragGhost.style.top = e.clientY + 'px';
-            }
 
             document.querySelectorAll('.drop-indicator').forEach(ind => {
                 ind.classList.remove('active');
@@ -875,7 +845,7 @@
         }
 
         function handleIndicatorDrop(e) {
-            if (!draggedTask) return;
+            if (!draggedTask || isDraggingColumn) return;
             e.preventDefault();
             e.stopPropagation();
             
@@ -912,14 +882,6 @@
             }
         });
 
-        document.addEventListener('mousemove', (e) => {
-            if (dragGhost) {
-                dragGhost.style.left = e.clientX + 'px';
-                dragGhost.style.top = e.clientY + 'px';
-            }
-        });
-
-        // Load data when page loads
         loadData();
     </script>
 </body>
