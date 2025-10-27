@@ -88,6 +88,10 @@
           {
             "id": 16,
             "text": "Added two SQL databases (SQLLite and DuckDB) and tested for clashes and context switched, fixed issues and clashes."
+          },
+          {
+            "id": 17,
+            "text": "Added two NoSQL databases (MongoDB andd TinyDB) and tested if context switching is correctly executed and there are no clashes."
           }
         ],
         "minor": []
@@ -95,7 +99,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 17,
+  "nextTaskId": 18,
   "dropdownStates": {
     "3-major": false
   }
