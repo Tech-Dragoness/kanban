@@ -18,7 +18,12 @@
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 4,
+            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
+          }
+        ]
       }
     },
     {
@@ -39,6 +44,6 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 4,
+  "nextTaskId": 5,
   "dropdownStates": {}
 }
