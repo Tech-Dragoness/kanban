@@ -40,7 +40,12 @@
             "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 7,
+            "text": "1.\tFix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
+          }
+        ]
       }
     },
     {
@@ -53,6 +58,6 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 7,
+  "nextTaskId": 8,
   "dropdownStates": {}
 }
