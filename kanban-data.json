@@ -6,16 +6,16 @@
       "tasks": {
         "major": [
           {
-            "id": 1,
-            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
-          },
-          {
             "id": 2,
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
+          },
+          {
+            "id": 1,
+            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           }
         ],
         "minor": [
