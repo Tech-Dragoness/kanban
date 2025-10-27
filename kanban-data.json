@@ -72,6 +72,10 @@
           {
             "id": 12,
             "text": "Added logic in both handlers to use db_handler and give work to the required handler to handle database-specific requests."
+          },
+          {
+            "id": 13,
+            "text": "Added logic to have the programmer use gui to perform CRUD operations on SQL and NoSQL databases and also run queries (Both within tables and outside tables, but not yet outside databases in the sense can't create new databases, can only work within a database i.e work only within SQLLite's database DB1 at a time)."
           }
         ],
         "minor": []
@@ -79,7 +83,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 13,
+  "nextTaskId": 14,
   "dropdownStates": {
     "3-major": false
   }
