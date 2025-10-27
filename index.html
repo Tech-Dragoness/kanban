@@ -107,6 +107,7 @@
             display: none;
             align-self: stretch;
             min-height: 200px;
+            flex-shrink: 0;
         }
 
         .column-drop-indicator.active {
@@ -388,14 +389,9 @@
 <body>
     <div class="header">
         <h1>My KanBan</h1>
-        <div style="display: flex; gap: 10px;">
-            <button class="btn" onclick="testConnection()" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); color: #1e40af;">
-                🔍 Test Connection
-            </button>
-            <button class="btn" onclick="addColumn()">
-                ➕ Add Column
-            </button>
-        </div>
+        <button class="btn" onclick="addColumn()">
+            ➕ Add Column
+        </button>
     </div>
 
     <div class="columns-container">
@@ -690,9 +686,15 @@
                 handle.addEventListener('dragend', handleColumnDragEnd);
             });
 
+            const columns = document.querySelectorAll('.column');
+            columns.forEach(col => {
+                col.addEventListener('dragover', handleColumnDragOver);
+            });
+
             const columnIndicators = document.querySelectorAll('.column-drop-indicator');
             columnIndicators.forEach(indicator => {
                 indicator.addEventListener('dragover', handleColumnIndicatorDragOver);
+                indicator.addEventListener('dragleave', handleColumnIndicatorDragLeave);
                 indicator.addEventListener('drop', handleColumnIndicatorDrop);
             });
         }
@@ -704,18 +706,23 @@
             draggedColumn = columns[draggedColumnIndex];
             column.classList.add('dragging-column');
             e.dataTransfer.effectAllowed = 'move';
-            e.stopPropagation();
+            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
         }
 
         function handleColumnDragEnd(e) {
             isDraggingColumn = false;
-            const column = this.closest('.column');
-            column.classList.remove('dragging-column');
+            const allColumns = document.querySelectorAll('.column');
+            allColumns.forEach(col => col.classList.remove('dragging-column'));
             document.querySelectorAll('.column-drop-indicator').forEach(ind => {
                 ind.classList.remove('active');
             });
             draggedColumn = null;
             draggedColumnIndex = -1;
+        }
+
+        function handleColumnDragOver(e) {
+            if (!isDraggingColumn) return;
+            e.preventDefault();
         }
 
         function handleColumnIndicatorDragOver(e) {
@@ -729,14 +736,25 @@
             this.classList.add('active');
         }
 
+        function handleColumnIndicatorDragLeave(e) {
+            if (!draggedColumn) return;
+            this.classList.remove('active');
+        }
+
         function handleColumnIndicatorDrop(e) {
             if (!draggedColumn) return;
             e.preventDefault();
             e.stopPropagation();
 
             const targetIndex = parseInt(this.dataset.index);
+            
+            // Remove from old position
             columns.splice(draggedColumnIndex, 1);
+            
+            // Calculate new index (adjust if dropping after the dragged item)
             const newIndex = targetIndex > draggedColumnIndex ? targetIndex - 1 : targetIndex;
+            
+            // Insert at new position
             columns.splice(newIndex, 0, draggedColumn);
 
             render();
@@ -780,6 +798,7 @@
             draggedFrom = { ...draggedTask };
             task.classList.add('dragging');
             e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
             e.stopPropagation();
         }
 
@@ -905,44 +924,6 @@
                 confirmModal();
             }
         });
-
-        async function testConnection() {
-            const btn = event.target;
-            btn.textContent = '⏳ Testing...';
-            btn.disabled = true;
-
-            try {
-                // Test basic connection
-                const healthResponse = await fetch(`${API_URL}/`);
-                const healthData = await healthResponse.json();
-                
-                // Test GitHub connection if available
-                let githubStatus = 'Not configured';
-                try {
-                    const githubResponse = await fetch(`${API_URL}/api/test-github`);
-                    const githubData = await githubResponse.json();
-                    githubStatus = githubData.connected ? '✓ Connected' : '✗ ' + (githubData.error || 'Failed');
-                } catch (e) {
-                    githubStatus = '✗ Error: ' + e.message;
-                }
-
-                alert(`🔍 Connection Test Results:\n\n` +
-                      `API Status: ${healthData.status}\n` +
-                      `Storage: ${healthData.storage}\n` +
-                      `GitHub: ${githubStatus}\n` +
-                      `Repo: ${healthData.github_repo || 'Not set'}\n` +
-                      `Token: ${healthData.github_token || 'Not set'}\n\n` +
-                      `Check browser console (F12) for detailed logs.`);
-                
-                console.log('Health check:', healthData);
-            } catch (error) {
-                alert(`❌ Connection Failed!\n\n${error.message}\n\nAPI URL: ${API_URL}\n\nCheck:\n1. Is backend running?\n2. Is API_URL correct?\n3. CORS enabled?`);
-                console.error('Connection test failed:', error);
-            } finally {
-                btn.textContent = '🔍 Test Connection';
-                btn.disabled = false;
-            }
-        }
 
         loadData();
     </script>
