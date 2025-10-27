@@ -80,6 +80,10 @@
           {
             "id": 14,
             "text": "Added logic to allow alteration of table structure, records and documents via GUI (Shows number of records, collections, tables and documents and they update whenever insertion/creation/deletion are performed)."
+          },
+          {
+            "id": 15,
+            "text": "Added db_registry for automatically detecting handlers for plug and play experience (Programmers just need to add a file with *_handler.py and it would automatically be detected and taken as new database type, is the programmer's responsibility to follow guidelines such as stating what type of database it is and it's name and add in all the abstract methods needed)"
           }
         ],
         "minor": []
@@ -87,7 +91,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 15,
+  "nextTaskId": 16,
   "dropdownStates": {
     "3-major": false
   }
