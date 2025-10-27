@@ -84,6 +84,10 @@
           {
             "id": 15,
             "text": "Added db_registry for automatically detecting handlers for plug and play experience (Programmers just need to add a file with *_handler.py and it would automatically be detected and taken as new database type, is the programmer's responsibility to follow guidelines such as stating what type of database it is and it's name and add in all the abstract methods needed)"
+          },
+          {
+            "id": 16,
+            "text": "Added two SQL databases (SQLLite and DuckDB) and tested for clashes and context switched, fixed issues and clashes."
           }
         ],
         "minor": []
@@ -91,7 +95,7 @@
     }
   ],
   "nextColumnId": 4,
-  "nextTaskId": 16,
+  "nextTaskId": 17,
   "dropdownStates": {
     "3-major": false
   }
