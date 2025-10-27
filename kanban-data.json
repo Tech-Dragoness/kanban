@@ -54,7 +54,7 @@
     },
     {
       "id": 3,
-      "name": "DoneFix Query tab on sidebar to work in individual databases and allow creation of databases as well.",
+      "name": "Done",
       "tasks": {
         "major": [
           {
