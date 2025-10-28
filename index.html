@@ -136,7 +136,6 @@
             user-select: none;
             transition: color 0.2s;
             padding: 4px;
-            pointer-events: none;
         }
 
         .column-drag-handle:hover {
@@ -146,31 +145,13 @@
         .column-drag-handle:active {
             cursor: grabbing;
         }
-        
-        .column-drag-wrapper {
-            cursor: grab;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px;
-            margin: -4px;
-            border-radius: 4px;
-            transition: background 0.2s;
-        }
-        
-        .column-drag-wrapper:hover {
-            background: #faf5ff;
-        }
-        
-        .column-drag-wrapper:active {
-            cursor: grabbing;
-        }
 
         .column-title {
             color: #7c3aed;
             font-size: 20px;
             font-weight: 600;
             flex: 1;
+            pointer-events: none;
         }
 
         .icon-btn {
@@ -537,11 +518,9 @@
 
                 colDiv.innerHTML = `
                     <div class="column-header">
-                        <div class="column-title-wrapper">
-                            <div class="column-drag-wrapper" draggable="true">
-                                <span class="column-drag-handle">⋮⋮</span>
-                                <div class="column-title">${col.name}</div>
-                            </div>
+                        <div class="column-title-wrapper" draggable="true">
+                            <span class="column-drag-handle">⋮⋮</span>
+                            <div class="column-title">${col.name}</div>
                         </div>
                         <div style="display: flex; gap: 6px;">
                             <button class="icon-btn" onclick="event.stopPropagation(); renameColumn(${col.id})">✏️</button>
@@ -702,7 +681,7 @@
         }
 
         function attachColumnDragListeners() {
-            const dragWrappers = document.querySelectorAll('.column-drag-wrapper');
+            const dragWrappers = document.querySelectorAll('.column-title-wrapper');
             dragWrappers.forEach(wrapper => {
                 wrapper.addEventListener('dragstart', handleColumnDragStart);
                 wrapper.addEventListener('dragend', handleColumnDragEnd);
@@ -770,13 +749,8 @@
 
             const targetIndex = parseInt(this.dataset.index);
             
-            // Remove from old position
             columns.splice(draggedColumnIndex, 1);
-            
-            // Calculate new index (adjust if dropping after the dragged item)
             const newIndex = targetIndex > draggedColumnIndex ? targetIndex - 1 : targetIndex;
-            
-            // Insert at new position
             columns.splice(newIndex, 0, draggedColumn);
 
             render();
@@ -820,7 +794,7 @@
             draggedFrom = { ...draggedTask };
             task.classList.add('dragging');
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', ''); // Required for Firefox
+            e.dataTransfer.setData('text/plain', '');
             e.stopPropagation();
         }
 
@@ -892,7 +866,8 @@
             const targetColumnId = parseInt(this.dataset.columnId);
             const targetType = this.dataset.type;
             const targetCol = columns.find(c => c.id === targetColumnId);
-            const targetIndex = targetCol.tasks[targetType].findIndex(t => t.id === parseInt(this.dataset.taskId));
+            const targetTaskId = parseInt(this.dataset.taskId);
+            const targetIndex = targetCol.tasks[targetType].findIndex(t => t.id === targetTaskId);
 
             moveTask(targetColumnId, targetType, e.clientY < midpoint ? targetIndex : targetIndex + 1);
         }
@@ -926,15 +901,17 @@
             const targetCol = columns.find(c => c.id === targetColumnId);
 
             const task = sourceCol.tasks[draggedFrom.type].find(t => t.id === draggedTask.id);
-            sourceCol.tasks[draggedFrom.type] = sourceCol.tasks[draggedFrom.type].filter(t => t.id !== draggedTask.id);
+            const sourceIndex = sourceCol.tasks[draggedFrom.type].findIndex(t => t.id === draggedTask.id);
+            
+            // Remove from source
+            sourceCol.tasks[draggedFrom.type].splice(sourceIndex, 1);
 
-            if (draggedFrom.columnId === targetColumnId && draggedFrom.type === targetType) {
-                const originalIndex = sourceCol.tasks[draggedFrom.type].findIndex((t, i) => i >= targetIndex);
-                if (originalIndex !== -1 && targetIndex > 0) {
-                    targetIndex = Math.max(0, targetIndex - 1);
-                }
+            // Adjust target index if moving within same column and type
+            if (draggedFrom.columnId === targetColumnId && draggedFrom.type === targetType && targetIndex > sourceIndex) {
+                targetIndex--;
             }
 
+            // Insert at target position
             targetCol.tasks[targetType].splice(targetIndex, 0, task);
 
             render();
