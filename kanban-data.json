@@ -6,10 +6,6 @@
       "tasks": {
         "major": [
           {
-            "id": 1,
-            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
-          },
-          {
             "id": 2,
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
@@ -38,6 +34,10 @@
           {
             "id": 6,
             "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
+          },
+          {
+            "id": 1,
+            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           }
         ],
         "minor": [
