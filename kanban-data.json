@@ -104,12 +104,12 @@
         ],
         "minor": [
           {
-            "id": 21,
-            "text": "Fix the issue of 0 documents showing in collection_list"
-          },
-          {
             "id": 20,
             "text": "Fixed issue of sql databases creating databases in the same folder (Causing unrelated dbs to show up in SQLite list of dbs)"
+          },
+          {
+            "id": 21,
+            "text": "Fix the issue of 0 documents showing in collection_list"
           },
           {
             "id": 23,
