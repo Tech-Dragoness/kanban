@@ -22,12 +22,12 @@
             "text": "Use pagination to limit the number of rows read in one go, otherwise gigantic databases can cause crashes"
           },
           {
-            "id": 3,
-            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
             "id": 26,
             "text": "Ensure that the system will work on all or at least most platforms"
+          },
+          {
+            "id": 3,
+            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           }
         ],
         "minor": [
