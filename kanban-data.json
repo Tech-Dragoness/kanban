@@ -14,12 +14,12 @@
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
-            "id": 3,
-            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
             "id": 24,
             "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
+          },
+          {
+            "id": 3,
+            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           },
           {
             "id": 25,
