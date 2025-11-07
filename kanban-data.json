@@ -141,7 +141,7 @@
           },
           {
             "id": 7,
-            "text": "1.\tFix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
+            "text": "Fix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
           }
         ]
       }
