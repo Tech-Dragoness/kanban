@@ -67,7 +67,7 @@
         "minor": [
           {
             "id": 8,
-            "text": "2.\tFix the handler name shown on the sidebar that shows no handler everywhere except on the home page."
+            "text": "Fix the handler name shown on the sidebar that shows no handler everywhere except on the home page."
           }
         ]
       }
