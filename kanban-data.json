@@ -106,16 +106,16 @@
             "text": "Added two SQL databases (SQLLite and DuckDB) and tested for clashes and context switched, fixed issues and clashes."
           },
           {
-            "id": 5,
-            "text": "Ability to view or create and open a database in a specific database type with a command on the cmd."
-          },
-          {
             "id": 17,
             "text": "Added two NoSQL databases (MongoDB andd TinyDB) and tested if context switching is correctly executed and there are no clashes."
           },
           {
             "id": 18,
             "text": "Fix Query tab on sidebar to work in individual databases and allow creation of databases as well."
+          },
+          {
+            "id": 5,
+            "text": "Ability to view or create and open a database in a specific database type with a command on the cmd."
           },
           {
             "id": 19,
@@ -166,7 +166,7 @@
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": false,
-    "3-minor": false
+    "3-major": true,
+    "3-minor": true
   }
 }
