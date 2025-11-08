@@ -24,10 +24,6 @@
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
-            "id": 4,
-            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
           }
         ],
         "minor": [
@@ -61,6 +57,10 @@
           }
         ],
         "minor": [
+          {
+            "id": 4,
+            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
+          },
           {
             "id": 31,
             "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
@@ -166,7 +166,7 @@
   "nextColumnId": 5,
   "nextTaskId": 32,
   "dropdownStates": {
-    "1-major": false,
+    "1-major": true,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
