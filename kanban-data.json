@@ -68,6 +68,10 @@
           {
             "id": 8,
             "text": "Fix the handler name shown on the sidebar that shows no handler everywhere except on the home page."
+          },
+          {
+            "id": 30,
+            "text": "Fix the issue of columns containing data refusing to be renamed because they need to be dropped first"
           }
         ]
       }
@@ -156,7 +160,7 @@
     }
   ],
   "nextColumnId": 5,
-  "nextTaskId": 30,
+  "nextTaskId": 31,
   "dropdownStates": {
     "1-major": true,
     "1-minor": false,
