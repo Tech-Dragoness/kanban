@@ -28,16 +28,16 @@
         ],
         "minor": [
           {
+            "id": 31,
+            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
+          },
+          {
             "id": 27,
             "text": "Add search bar to search db names and table names"
           },
           {
             "id": 4,
             "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
-          },
-          {
-            "id": 31,
-            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
           },
           {
             "id": 25,
