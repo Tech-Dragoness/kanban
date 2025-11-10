@@ -36,12 +36,12 @@
       "tasks": {
         "major": [
           {
-            "id": 29,
-            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
-          },
-          {
             "id": 1,
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
+          },
+          {
+            "id": 29,
+            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
           },
           {
             "id": 26,
