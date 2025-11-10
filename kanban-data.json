@@ -1,6 +1,36 @@
 {
   "columns": [
     {
+      "id": 2,
+      "name": "In Progress",
+      "tasks": {
+        "major": [
+          {
+            "id": 2,
+            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
+          },
+          {
+            "id": 6,
+            "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
+          }
+        ],
+        "minor": [
+          {
+            "id": 4,
+            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
+          },
+          {
+            "id": 31,
+            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
+          }
+        ]
+      }
+    },
+    {
       "id": 1,
       "name": "To Do",
       "tasks": {
@@ -34,36 +64,6 @@
           {
             "id": 28,
             "text": "Add ability to search for specific information in records/documents"
-          }
-        ]
-      }
-    },
-    {
-      "id": 2,
-      "name": "In Progress",
-      "tasks": {
-        "major": [
-          {
-            "id": 2,
-            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
-          },
-          {
-            "id": 6,
-            "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
-          },
-          {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          }
-        ],
-        "minor": [
-          {
-            "id": 4,
-            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
-          },
-          {
-            "id": 31,
-            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
           }
         ]
       }
