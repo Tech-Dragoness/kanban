@@ -6,16 +6,16 @@
       "tasks": {
         "major": [
           {
+            "id": 2,
+            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
+          },
+          {
             "id": 1,
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
           {
             "id": 29,
             "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
-          },
-          {
-            "id": 2,
-            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
             "id": 26,
