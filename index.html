@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #a499dd 0%, #8a46ce 100%);
+            background: linear-gradient(135deg, #f5f3ff 0%, #faf5ff 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -74,6 +74,7 @@
             display: inline-flex;
             gap: 20px;
             min-width: 100%;
+            align-items: flex-start;
         }
 
         .column {
@@ -105,7 +106,6 @@
             background: linear-gradient(180deg, #e9d5ff 0%, #c4b5fd 50%, #e9d5ff 100%);
             border-radius: 2px;
             display: none;
-            align-self: stretch;
             min-height: 200px;
             flex-shrink: 0;
         }
@@ -127,23 +127,29 @@
             align-items: center;
             gap: 8px;
             flex: 1;
+            cursor: grab;
+            padding: 4px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .column-title-wrapper:hover {
+            background: #faf5ff;
+        }
+
+        .column-title-wrapper:active {
+            cursor: grabbing;
         }
 
         .column-drag-handle {
-            cursor: grab;
             color: #c4b5fd;
             font-size: 20px;
             user-select: none;
             transition: color 0.2s;
-            padding: 4px;
         }
 
-        .column-drag-handle:hover {
+        .column-title-wrapper:hover .column-drag-handle {
             color: #a78bfa;
-        }
-
-        .column-drag-handle:active {
-            cursor: grabbing;
         }
 
         .column-title {
@@ -385,6 +391,29 @@
                 padding: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .column {
+                min-width: 260px;
+                padding: 15px;
+            }
+
+            .column-title {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -518,7 +547,7 @@
 
                 colDiv.innerHTML = `
                     <div class="column-header">
-                        <div class="column-title-wrapper" draggable="true">
+                        <div class="column-title-wrapper" draggable="true" data-column-handle="true">
                             <span class="column-drag-handle">⋮⋮</span>
                             <div class="column-title">${col.name}</div>
                         </div>
@@ -572,7 +601,7 @@
             return tasks.map((task, index) => `
                 <div class="drop-indicator" data-column-id="${columnId}" data-type="${type}" data-index="${index}"></div>
                 <div class="task" data-task-id="${task.id}" data-column-id="${columnId}" data-type="${type}">
-                    <span class="task-drag" draggable="true">⋮⋮</span>
+                    <span class="task-drag" draggable="true" data-task-handle="true">⋮⋮</span>
                     <span class="task-number">${index + 1}.</span>
                     <span class="task-text">${task.text}</span>
                     <div class="task-actions">
@@ -681,15 +710,10 @@
         }
 
         function attachColumnDragListeners() {
-            const dragWrappers = document.querySelectorAll('.column-title-wrapper');
+            const dragWrappers = document.querySelectorAll('[data-column-handle]');
             dragWrappers.forEach(wrapper => {
                 wrapper.addEventListener('dragstart', handleColumnDragStart);
                 wrapper.addEventListener('dragend', handleColumnDragEnd);
-            });
-
-            const columns = document.querySelectorAll('.column');
-            columns.forEach(col => {
-                col.addEventListener('dragover', handleColumnDragOver);
             });
 
             const columnIndicators = document.querySelectorAll('.column-drop-indicator');
@@ -707,7 +731,8 @@
             draggedColumn = columns[draggedColumnIndex];
             column.classList.add('dragging-column');
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', '');
+            e.dataTransfer.setData('text/plain', 'column');
+            console.log('Started dragging column:', draggedColumn.name);
         }
 
         function handleColumnDragEnd(e) {
@@ -719,17 +744,14 @@
             });
             draggedColumn = null;
             draggedColumnIndex = -1;
-        }
-
-        function handleColumnDragOver(e) {
-            if (!isDraggingColumn) return;
-            e.preventDefault();
+            console.log('Ended dragging column');
         }
 
         function handleColumnIndicatorDragOver(e) {
-            if (!draggedColumn) return;
+            if (!isDraggingColumn || !draggedColumn) return;
             e.preventDefault();
             e.stopPropagation();
+            e.dataTransfer.dropEffect = 'move';
 
             document.querySelectorAll('.column-drop-indicator').forEach(ind => {
                 ind.classList.remove('active');
@@ -738,27 +760,35 @@
         }
 
         function handleColumnIndicatorDragLeave(e) {
-            if (!draggedColumn) return;
+            if (!isDraggingColumn) return;
             this.classList.remove('active');
         }
 
         function handleColumnIndicatorDrop(e) {
-            if (!draggedColumn) return;
+            if (!isDraggingColumn || !draggedColumn) return;
             e.preventDefault();
             e.stopPropagation();
 
             const targetIndex = parseInt(this.dataset.index);
+            console.log('Dropping column at index:', targetIndex, 'from:', draggedColumnIndex);
             
+            // Remove from old position
             columns.splice(draggedColumnIndex, 1);
+            
+            // Calculate new position
             const newIndex = targetIndex > draggedColumnIndex ? targetIndex - 1 : targetIndex;
+            
+            // Insert at new position
             columns.splice(newIndex, 0, draggedColumn);
+            
+            console.log('Column moved to index:', newIndex);
 
             render();
             saveData();
         }
 
         function attachDragListeners() {
-            const taskDragHandles = document.querySelectorAll('.task-drag');
+            const taskDragHandles = document.querySelectorAll('[data-task-handle]');
             taskDragHandles.forEach(handle => {
                 handle.addEventListener('dragstart', handleTaskDragStart);
                 handle.addEventListener('dragend', handleTaskDragEnd);
@@ -785,6 +815,8 @@
         }
 
         function handleTaskDragStart(e) {
+            if (isDraggingColumn) return;
+            
             const task = this.closest('.task');
             draggedTask = {
                 id: parseInt(task.dataset.taskId),
@@ -794,7 +826,7 @@
             draggedFrom = { ...draggedTask };
             task.classList.add('dragging');
             e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', '');
+            e.dataTransfer.setData('text/plain', 'task');
             e.stopPropagation();
         }
 
