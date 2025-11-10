@@ -1,44 +1,6 @@
 {
   "columns": [
     {
-      "id": 1,
-      "name": "To Do",
-      "tasks": {
-        "major": [
-          {
-            "id": 1,
-            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
-          },
-          {
-            "id": 29,
-            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
-          },
-          {
-            "id": 26,
-            "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
-          },
-          {
-            "id": 3,
-            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          }
-        ],
-        "minor": [
-          {
-            "id": 27,
-            "text": "Add search bar to search db names and table names"
-          },
-          {
-            "id": 25,
-            "text": "Use pagination to limit the number of rows read in one go, otherwise gigantic databases can cause crashes"
-          },
-          {
-            "id": 28,
-            "text": "Add ability to search for specific information in records/documents"
-          }
-        ]
-      }
-    },
-    {
       "id": 2,
       "name": "In Progress",
       "tasks": {
@@ -160,6 +122,44 @@
       "tasks": {
         "major": [],
         "minor": []
+      }
+    },
+    {
+      "id": 1,
+      "name": "To Do",
+      "tasks": {
+        "major": [
+          {
+            "id": 1,
+            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
+          },
+          {
+            "id": 29,
+            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
+          },
+          {
+            "id": 26,
+            "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
+          },
+          {
+            "id": 3,
+            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
+          }
+        ],
+        "minor": [
+          {
+            "id": 27,
+            "text": "Add search bar to search db names and table names"
+          },
+          {
+            "id": 25,
+            "text": "Use pagination to limit the number of rows read in one go, otherwise gigantic databases can cause crashes"
+          },
+          {
+            "id": 28,
+            "text": "Add ability to search for specific information in records/documents"
+          }
+        ]
       }
     }
   ],
