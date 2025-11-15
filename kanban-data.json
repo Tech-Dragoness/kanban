@@ -52,15 +52,15 @@
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
-            "id": 6,
-            "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
-          },
-          {
             "id": 24,
             "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           }
         ],
         "minor": [
+          {
+            "id": 6,
+            "text": "Check how to access the databases created in code. (Need connection link? Provide it)"
+          },
           {
             "id": 4,
             "text": "Allow modification of database name"
