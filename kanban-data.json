@@ -14,16 +14,16 @@
             "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
           },
           {
+            "id": 32,
+            "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
+          },
+          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
-            "id": 32,
-            "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc))"
           }
         ],
         "minor": [
