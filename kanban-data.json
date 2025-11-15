@@ -161,9 +161,17 @@
           }
         ]
       }
+    },
+    {
+      "id": 5,
+      "name": "Testing",
+      "tasks": {
+        "major": [],
+        "minor": []
+      }
     }
   ],
-  "nextColumnId": 5,
+  "nextColumnId": 6,
   "nextTaskId": 34,
   "dropdownStates": {
     "1-major": false,
