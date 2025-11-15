@@ -63,7 +63,7 @@
         "minor": [
           {
             "id": 4,
-            "text": "Allow modification of database name, let them be in their actual capitalization instead of appearing as fully lowercase (Unless it has to be displayed that way)"
+            "text": "Allow modification of database name"
           },
           {
             "id": 31,
