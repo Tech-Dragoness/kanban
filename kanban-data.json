@@ -126,12 +126,12 @@
             "text": "Ability to view or create and open a database in a specific database type with a command on the cmd."
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
+            "id": 35,
+            "text": "Added PostgreSQL and MySQL databases to supported SQL databases."
           },
           {
-            "id": 35,
-            "text": "Added PostgreSQL and MySQL databases as well to supported SQL databases."
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
@@ -186,7 +186,7 @@
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": false,
+    "3-major": true,
     "3-minor": false
   }
 }
