@@ -42,6 +42,10 @@
           {
             "id": 34,
             "text": "Add DB-specific data types to define columns page of SQL DBs. Ensure no DB-specific code is there for this in any other place apart from it's own handler"
+          },
+          {
+            "id": 38,
+            "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           }
         ]
       }
@@ -188,7 +192,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 38,
+  "nextTaskId": 39,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
