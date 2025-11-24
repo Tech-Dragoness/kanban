@@ -28,6 +28,10 @@
           {
             "id": 39,
             "text": "Joins and Triggers to be implemented"
+          },
+          {
+            "id": 40,
+            "text": "Implement PLSQL block"
           }
         ],
         "minor": [
@@ -196,7 +200,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 40,
+  "nextTaskId": 41,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
