@@ -54,6 +54,10 @@
           {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
+            "id": 41,
+            "text": "Add filtering ability by columns"
           }
         ]
       }
@@ -200,7 +204,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 41,
+  "nextTaskId": 42,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
