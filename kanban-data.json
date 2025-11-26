@@ -44,10 +44,6 @@
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           },
           {
-            "id": 41,
-            "text": "Add filtering ability by columns"
-          },
-          {
             "id": 45,
             "text": "Add test cases for regression testing of plsql and triggers"
           }
@@ -184,10 +180,6 @@
             "text": "Made all SQL dbs show their db names and table names in their true capitalization (Except Duckdb which apparently has Windows's influence on it that causes dbs to be stored in lowercase but can be accessed with the capitalized form as well since it's case-insensitive and MySQL which in Windows by default stores in lowercase)"
           },
           {
-            "id": 25,
-            "text": "Use pagination to limit the number of rows read in one go, otherwise gigantic databases can cause crashes"
-          },
-          {
             "id": 36,
             "text": "Added a credential entry page for DBs like MySQL and PostgreSQL that needs credentials to connect and uses keyring to store these credentials for further access"
           },
@@ -198,6 +190,14 @@
           {
             "id": 6,
             "text": "Checked how to access the databases created in code. Provided connection links for each db along with instructions and test code."
+          },
+          {
+            "id": 25,
+            "text": "Use pagination to limit the number of rows read in one go, otherwise gigantic databases can cause crashes"
+          },
+          {
+            "id": 41,
+            "text": "Add filtering ability by columns"
           }
         ]
       }
