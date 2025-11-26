@@ -26,10 +26,6 @@
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           },
           {
-            "id": 39,
-            "text": "Joins and Triggers to be implemented"
-          },
-          {
             "id": 40,
             "text": "Implement PLSQL block"
           }
