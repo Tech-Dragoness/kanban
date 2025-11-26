@@ -156,6 +156,10 @@
           {
             "id": 42,
             "text": "Added tabs for plsql on PostgreSQL that supports it"
+          },
+          {
+            "id": 43,
+            "text": "Added triggers tab on PostgreSQL, MySQL and SQLite which supports it"
           }
         ],
         "minor": [
@@ -208,7 +212,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 43,
+  "nextTaskId": 44,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
