@@ -150,16 +150,16 @@
             "text": "Fixed a bug in regards to MySQL where credentials kept failing (Strongly suspect issue with personal xammp, therefore installed MySQL separately and testing on it, all issues seem to be resolved))"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 42,
             "text": "Added tabs for plsql on PostgreSQL that supports it"
           },
           {
             "id": 43,
             "text": "Added triggers tab on PostgreSQL, MySQL and SQLite which supports it"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
