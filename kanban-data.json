@@ -152,6 +152,10 @@
           {
             "id": 37,
             "text": "Fixed a bug in regards to MySQL where credentials kept failing (Strongly suspect issue with personal xammp, therefore installed MySQL separately and testing on it, all issues seem to be resolved))"
+          },
+          {
+            "id": 42,
+            "text": "Added tabs for plsql on PostgreSQL that supports it"
           }
         ],
         "minor": [
@@ -204,7 +208,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 42,
+  "nextTaskId": 43,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
