@@ -10,6 +10,10 @@
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
           {
+            "id": 2,
+            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
+          },
+          {
             "id": 32,
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
@@ -50,10 +54,6 @@
           {
             "id": 31,
             "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
-          },
-          {
-            "id": 2,
-            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           }
         ],
         "minor": [
