@@ -10,10 +10,6 @@
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
           {
-            "id": 29,
-            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
-          },
-          {
             "id": 32,
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
@@ -172,6 +168,10 @@
             "text": "Fix the issue of modify and delete button on documents not working in MongoDB."
           },
           {
+            "id": 29,
+            "text": "Visualize database structures with diagrams like ER Diagrams (See if diagrams can be generated for this)"
+          },
+          {
             "id": 7,
             "text": "Fix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
           },
@@ -238,7 +238,7 @@
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": false,
+    "3-major": true,
     "3-minor": false
   }
 }
