@@ -26,16 +26,16 @@
             "text": "Add autocomplete sql/nosql queries"
           },
           {
+            "id": 49,
+            "text": "Add user rights"
+          },
+          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
-            "id": 49,
-            "text": "Add user rights"
           }
         ],
         "minor": [
