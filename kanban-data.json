@@ -50,16 +50,16 @@
           {
             "id": 31,
             "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
+          },
+          {
+            "id": 46,
+            "text": "Add autocomplete sql/nosql queries"
           }
         ],
         "minor": [
           {
             "id": 4,
             "text": "Allow modification of database name"
-          },
-          {
-            "id": 46,
-            "text": "Add autocomplete sql/nosql queries"
           },
           {
             "id": 24,
