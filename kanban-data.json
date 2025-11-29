@@ -146,12 +146,12 @@
             "text": "Add charts like pie chart or bar graph to view the data in a table/collection"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 50,
             "text": "Added procedure tab and support for procedure in mysql"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
