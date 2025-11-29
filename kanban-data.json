@@ -18,10 +18,6 @@
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
           {
-            "id": 47,
-            "text": "Add charts like pie chart or bar graph to view the data in a table/collection"
-          },
-          {
             "id": 46,
             "text": "Add autocomplete sql/nosql queries"
           },
@@ -162,6 +158,10 @@
           {
             "id": 21,
             "text": "Fix the issue of 0 documents showing in collection_list"
+          },
+          {
+            "id": 47,
+            "text": "Add charts like pie chart or bar graph to view the data in a table/collection"
           },
           {
             "id": 23,
