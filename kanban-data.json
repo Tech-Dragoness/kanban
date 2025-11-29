@@ -146,6 +146,10 @@
             "text": "Added procedure tab and support for procedure in mysql"
           },
           {
+            "id": 49,
+            "text": "Add user rights"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
@@ -166,10 +170,6 @@
           {
             "id": 22,
             "text": "Fix the issue of modify and delete button on documents not working in MongoDB."
-          },
-          {
-            "id": 49,
-            "text": "Add user rights"
           },
           {
             "id": 7,
@@ -238,7 +238,7 @@
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": true,
+    "3-major": false,
     "3-minor": false
   }
 }
