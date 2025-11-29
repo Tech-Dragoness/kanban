@@ -28,10 +28,6 @@
         ],
         "minor": [
           {
-            "id": 28,
-            "text": "Add ability to search for specific information in records/documents"
-          },
-          {
             "id": 34,
             "text": "Add DB-specific data types to define columns page of SQL DBs. Ensure no DB-specific code is there for this in any other place apart from it's own handler"
           },
@@ -174,6 +170,10 @@
           {
             "id": 33,
             "text": "Made all SQL dbs show their db names and table names in their true capitalization (Except Duckdb which apparently has Windows's influence on it that causes dbs to be stored in lowercase but can be accessed with the capitalized form as well since it's case-insensitive and MySQL which in Windows by default stores in lowercase)"
+          },
+          {
+            "id": 28,
+            "text": "Add ability to search for specific information in records/documents"
           },
           {
             "id": 27,
