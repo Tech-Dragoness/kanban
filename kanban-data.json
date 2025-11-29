@@ -184,10 +184,6 @@
             "text": "Checked and confirmed functionality of joins"
           },
           {
-            "id": 28,
-            "text": "Add ability to search for specific information in records/documents"
-          },
-          {
             "id": 6,
             "text": "Checked how to access the databases created in code. Provided connection links for each db along with instructions and test code."
           },
@@ -198,6 +194,10 @@
           {
             "id": 41,
             "text": "Add filtering ability by columns"
+          },
+          {
+            "id": 28,
+            "text": "Add ability to search for specific information in records/documents"
           }
         ]
       }
