@@ -218,6 +218,10 @@
           {
             "id": 48,
             "text": "Test for procedures, group by, joins, functions"
+          },
+          {
+            "id": 51,
+            "text": "Noted: Postgresql requires table names to be in quotes while writing queries. This is not a bug but a feature."
           }
         ]
       }
@@ -232,7 +236,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 51,
+  "nextTaskId": 52,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
