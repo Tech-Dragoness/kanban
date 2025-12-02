@@ -217,7 +217,7 @@
           },
           {
             "id": 48,
-            "text": "Test for procedures, group by, joins, functions"
+            "text": "Test for procedures, group by, order by, having clause, aggregate functions (Like AVG, SUM, etc)), joins, functions"
           },
           {
             "id": 51,
