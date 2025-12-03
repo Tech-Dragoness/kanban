@@ -18,16 +18,16 @@
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
           {
+            "id": 53,
+            "text": "Change the NoSQL query logic in all query tabs to be less strict and allow execution of anything as long as the handler is able to."
+          },
+          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
-            "id": 53,
-            "text": "Change the NoSQL query logic in all query tabs to be less strict and allow execution of anything as long as the handler is able to."
           }
         ],
         "minor": [
