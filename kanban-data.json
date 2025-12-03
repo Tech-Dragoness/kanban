@@ -38,6 +38,10 @@
           {
             "id": 45,
             "text": "Add test cases for regression testing of plsql and triggers"
+          },
+          {
+            "id": 52,
+            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
           }
         ]
       }
@@ -236,13 +240,13 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 52,
+  "nextTaskId": 53,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
     "3-major": true,
-    "3-minor": true
+    "3-minor": false
   }
 }
