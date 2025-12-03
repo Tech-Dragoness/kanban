@@ -154,6 +154,10 @@
             "text": "Add user rights"
           },
           {
+            "id": 55,
+            "text": "Converted the entire HTML frontend to React"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
@@ -248,7 +252,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 55,
+  "nextTaskId": 56,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
