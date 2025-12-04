@@ -242,6 +242,10 @@
           {
             "id": 56,
             "text": "Added option of managing relationships for er diagrams for making them more efficient and correct, and ensured that these relationships shall be recorded in the diagram statistics for the user to view"
+          },
+          {
+            "id": 57,
+            "text": "Changed the insert, update and delete sections in sql table details page to becomes buttons which when clicked opens a modal for data entry so that they take up less space in the page"
           }
         ]
       }
@@ -256,7 +260,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 57,
+  "nextTaskId": 58,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
