@@ -238,6 +238,10 @@
           {
             "id": 54,
             "text": "Fixed issue of MongoDB not showing all the fields in the search bar's filter"
+          },
+          {
+            "id": 56,
+            "text": "Added option of managing relationships for er diagrams for making them more efficient and correct"
           }
         ]
       }
@@ -252,7 +256,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 56,
+  "nextTaskId": 57,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
