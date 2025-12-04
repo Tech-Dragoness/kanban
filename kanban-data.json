@@ -241,7 +241,7 @@
           },
           {
             "id": 56,
-            "text": "Added option of managing relationships for er diagrams for making them more efficient and correct"
+            "text": "Added option of managing relationships for er diagrams for making them more efficient and correct, and ensured that these relationships shall be recorded in the diagram statistics for the user to view"
           }
         ]
       }
