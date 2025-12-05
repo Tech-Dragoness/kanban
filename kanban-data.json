@@ -250,6 +250,10 @@
           {
             "id": 57,
             "text": "Changed the insert, update and delete sections in sql table details page to becomes buttons which when clicked opens a modal for data entry so that they take up less space in the page"
+          },
+          {
+            "id": 59,
+            "text": "Ensured regression tests' compatibility with new React related backend changes"
           }
         ]
       }
@@ -264,7 +268,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 59,
+  "nextTaskId": 60,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
