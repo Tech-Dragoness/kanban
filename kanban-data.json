@@ -154,6 +154,14 @@
             "text": "Converted the entire HTML frontend to React"
           },
           {
+            "id": 45,
+            "text": "Added test cases for regression testing of plsql and triggers"
+          },
+          {
+            "id": 58,
+            "text": "Added test cases for procedures, triggers and user management"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
@@ -190,10 +198,6 @@
           {
             "id": 33,
             "text": "Made all SQL dbs show their db names and table names in their true capitalization (Except Duckdb which apparently has Windows's influence on it that causes dbs to be stored in lowercase but can be accessed with the capitalized form as well since it's case-insensitive and MySQL which in Windows by default stores in lowercase)"
-          },
-          {
-            "id": 45,
-            "text": "Add test cases for regression testing of plsql and triggers"
           },
           {
             "id": 27,
@@ -260,13 +264,13 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 58,
+  "nextTaskId": 59,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": true,
+    "3-major": false,
     "3-minor": false,
     "5-major": true
   }
