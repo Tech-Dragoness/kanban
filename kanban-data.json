@@ -76,6 +76,10 @@
           {
             "id": 61,
             "text": "Fix the issue of the global query page not allowing TinyDB commands"
+          },
+          {
+            "id": 62,
+            "text": "Fix the issue of Create Collection opening the newly created collection in sql format"
           }
         ]
       }
@@ -276,7 +280,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 62,
+  "nextTaskId": 63,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
