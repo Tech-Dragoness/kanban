@@ -72,6 +72,10 @@
           {
             "id": 60,
             "text": "Fix the issue of TinyDB not allowing <= and >= in it's queries"
+          },
+          {
+            "id": 61,
+            "text": "Fix the issue of the global query page not allowing TinyDB commands"
           }
         ]
       }
@@ -272,7 +276,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 61,
+  "nextTaskId": 62,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
