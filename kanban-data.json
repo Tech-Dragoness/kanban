@@ -162,12 +162,12 @@
             "text": "Added test cases for regression testing of procedures, pagination and user management"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 63,
             "text": "Change the NoSQL query logic in all query tabs to be less strict and allow execution of anything as long as the handler is able to."
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
