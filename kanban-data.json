@@ -14,16 +14,16 @@
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
+            "id": 65,
+            "text": "Add Firebase Firestore support to NoSQL dbs"
+          },
+          {
             "id": 64,
             "text": "Add support for Object Oriented Relational Databases"
           },
           {
             "id": 32,
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
-          },
-          {
-            "id": 65,
-            "text": "Add Firebase Firestore support to NoSQL dbs"
           },
           {
             "id": 26,
