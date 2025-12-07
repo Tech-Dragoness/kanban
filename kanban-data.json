@@ -14,6 +14,10 @@
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
+            "id": 64,
+            "text": "Add support for Object Oriented Relational Databases"
+          },
+          {
             "id": 32,
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
@@ -24,10 +28,6 @@
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
-            "id": 64,
-            "text": "Add support for Object Oriented Relational Databases"
           }
         ],
         "minor": [
