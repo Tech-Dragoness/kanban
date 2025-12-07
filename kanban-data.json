@@ -24,6 +24,10 @@
           {
             "id": 3,
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
+          },
+          {
+            "id": 64,
+            "text": "Add support for Object Oriented Relational Databases"
           }
         ],
         "minor": [
@@ -284,7 +288,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 64,
+  "nextTaskId": 65,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
