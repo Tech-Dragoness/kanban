@@ -282,6 +282,10 @@
           {
             "id": 66,
             "text": "Fixed the issue of search bar in home, database details and table/collection details not searching and providing results from all pages instead of just the current page due to pagination"
+          },
+          {
+            "id": 67,
+            "text": "Fixed issues in chart generation like legends showing as too big while the actual chart showed as too small, stats section not showing, some charts using same color for all the different fields, making the chart be scrollable to fit the size, ensuring all of the chart is visible in the downloaded image and cropping labels when too big"
           }
         ]
       }
@@ -296,14 +300,14 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 67,
+  "nextTaskId": 68,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
     "3-major": true,
-    "3-minor": true,
+    "3-minor": false,
     "5-major": true
   }
 }
