@@ -278,6 +278,10 @@
           {
             "id": 60,
             "text": "Fix the issue of TinyDB not allowing <= and >= in it's queries"
+          },
+          {
+            "id": 66,
+            "text": "Fixed the issue of search bar in home, database details and table/collection details not searching and providing results from all pages instead of just the current page due to pagination"
           }
         ]
       }
@@ -292,7 +296,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 66,
+  "nextTaskId": 67,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
