@@ -212,16 +212,16 @@
             "text": "Added a credential entry page for DBs like MySQL and PostgreSQL that needs credentials to connect and uses keyring to store these credentials for further access"
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 34,
             "text": "Add DB-specific data types to define columns page of SQL DBs. Ensure no DB-specific code is there for this in any other place apart from it's own handler"
           },
           {
             "id": 44,
             "text": "Checked and confirmed functionality of joins"
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           },
           {
             "id": 6,
