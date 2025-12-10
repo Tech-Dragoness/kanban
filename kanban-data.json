@@ -280,12 +280,12 @@
             "text": "Fixed the issue of search bar in home, database details and table/collection details not searching and providing results from all pages instead of just the current page due to pagination"
           },
           {
-            "id": 67,
-            "text": "Fixed issues in chart generation like legends showing as too big while the actual chart showed as too small, stats section not showing, some charts using same color for all the different fields, making the chart be scrollable to fit the size, ensuring all of the chart is visible in the downloaded image and cropping labels when too big"
-          },
-          {
             "id": 61,
             "text": "Fix the issue of the global query page not allowing TinyDB commands"
+          },
+          {
+            "id": 67,
+            "text": "Fixed issues in chart generation like legends showing as too big while the actual chart showed as too small, stats section not showing, some charts using same color for all the different fields, making the chart be scrollable to fit the size, ensuring all of the chart is visible in the downloaded image and cropping labels when too big"
           }
         ]
       }
