@@ -280,12 +280,12 @@
             "text": "Fixed the issue of search bar in home, database details and table/collection details not searching and providing results from all pages instead of just the current page due to pagination"
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 67,
             "text": "Fixed issues in chart generation like legends showing as too big while the actual chart showed as too small, stats section not showing, some charts using same color for all the different fields, making the chart be scrollable to fit the size, ensuring all of the chart is visible in the downloaded image and cropping labels when too big"
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           }
         ]
       }
