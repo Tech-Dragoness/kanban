@@ -30,12 +30,12 @@
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
           {
-            "id": 3,
-            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
-          },
-          {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
+            "id": 3,
+            "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           }
         ],
         "minor": [
