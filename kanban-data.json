@@ -22,16 +22,16 @@
             "text": "Add support for Object Oriented Relational Databases"
           },
           {
+            "id": 38,
+            "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
             "id": 32,
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
           {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
-          },
-          {
-            "id": 38,
-            "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           },
           {
             "id": 3,
