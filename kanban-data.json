@@ -264,10 +264,6 @@
             "text": "Changed the insert, update and delete sections in sql table details page to becomes buttons which when clicked opens a modal for data entry so that they take up less space in the page"
           },
           {
-            "id": 61,
-            "text": "Fix the issue of the global query page not allowing TinyDB commands"
-          },
-          {
             "id": 59,
             "text": "Ensured regression tests' compatibility with new React related backend changes"
           },
@@ -282,6 +278,10 @@
           {
             "id": 66,
             "text": "Fixed the issue of search bar in home, database details and table/collection details not searching and providing results from all pages instead of just the current page due to pagination"
+          },
+          {
+            "id": 61,
+            "text": "Fix the issue of the global query page not allowing TinyDB commands"
           },
           {
             "id": 67,
