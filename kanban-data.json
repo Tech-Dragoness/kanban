@@ -188,12 +188,12 @@
             "text": "Change the NoSQL query logic in all query tabs to be less strict and allow execution of anything as long as the handler is able to."
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 7,
             "text": "Fix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           },
           {
             "id": 8,
