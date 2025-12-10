@@ -72,10 +72,6 @@
           {
             "id": 24,
             "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
-            "id": 61,
-            "text": "Fix the issue of the global query page not allowing TinyDB commands"
           }
         ]
       }
@@ -104,6 +100,10 @@
           {
             "id": 13,
             "text": "Added logic to have the programmer use gui to perform CRUD operations on SQL and NoSQL databases and also run queries (Both within tables and outside tables, but not yet outside databases in the sense can't create new databases, can only work within a database i.e work only within SQLLite's database DB1 at a time)."
+          },
+          {
+            "id": 61,
+            "text": "Fix the issue of the global query page not allowing TinyDB commands"
           },
           {
             "id": 14,
