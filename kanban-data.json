@@ -256,16 +256,16 @@
             "text": "Added option of managing relationships for er diagrams for making them more efficient and correct, and ensured that these relationships shall be recorded in the diagram statistics for the user to view"
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 57,
             "text": "Changed the insert, update and delete sections in sql table details page to becomes buttons which when clicked opens a modal for data entry so that they take up less space in the page"
           },
           {
             "id": 59,
             "text": "Ensured regression tests' compatibility with new React related backend changes"
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           },
           {
             "id": 62,
