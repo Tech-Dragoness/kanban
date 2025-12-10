@@ -192,12 +192,12 @@
             "text": "Fix the issue of database getting deleted when it's created and user immediately goes back to list of databases without creating a collection in MongoDB."
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 8,
             "text": "Fix the handler name shown on the sidebar that shows no handler everywhere except on the home page."
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           },
           {
             "id": 30,
