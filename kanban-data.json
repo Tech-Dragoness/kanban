@@ -204,16 +204,16 @@
             "text": "Made all SQL dbs show their db names and table names in their true capitalization (Except Duckdb which apparently has Windows's influence on it that causes dbs to be stored in lowercase but can be accessed with the capitalized form as well since it's case-insensitive and MySQL which in Windows by default stores in lowercase)"
           },
           {
-            "id": 24,
-            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
-          },
-          {
             "id": 27,
             "text": "Add search bar to search db names and table names"
           },
           {
             "id": 36,
             "text": "Added a credential entry page for DBs like MySQL and PostgreSQL that needs credentials to connect and uses keyring to store these credentials for further access"
+          },
+          {
+            "id": 24,
+            "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
           },
           {
             "id": 34,
