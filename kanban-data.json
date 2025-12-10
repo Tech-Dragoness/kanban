@@ -306,7 +306,7 @@
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": true,
+    "3-major": false,
     "3-minor": false,
     "5-major": true
   }
