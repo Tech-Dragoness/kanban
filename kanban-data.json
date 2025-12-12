@@ -286,6 +286,14 @@
           {
             "id": 24,
             "text": "Add storage for query history, around 10 queries or so per database which can be accessed by using the up and down arrow keys on the query tab (The main Query tab can store queries separately, unless all query tab's functionality gets combined which might be for the better since that will make it consistent)"
+          },
+          {
+            "id": 69,
+            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
+          },
+          {
+            "id": 70,
+            "text": "Add Unique checkbox and option for sql databases in both TableDetails and CreateTableModal"
           }
         ]
       }
@@ -300,14 +308,14 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 69,
+  "nextTaskId": 71,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
     "3-major": true,
-    "3-minor": true,
+    "3-minor": false,
     "5-major": true
   }
 }
