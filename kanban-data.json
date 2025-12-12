@@ -10,6 +10,10 @@
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
+            "id": 38,
+            "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
             "id": 1,
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
@@ -20,10 +24,6 @@
           {
             "id": 64,
             "text": "Add support for Object Oriented Relational Databases"
-          },
-          {
-            "id": 38,
-            "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           },
           {
             "id": 32,
