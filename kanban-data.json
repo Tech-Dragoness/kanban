@@ -6,12 +6,12 @@
       "tasks": {
         "major": [
           {
-            "id": 2,
-            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
-          },
-          {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
+            "id": 2,
+            "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
           },
           {
             "id": 1,
@@ -55,10 +55,6 @@
       "name": "In Progress",
       "tasks": {
         "major": [
-          {
-            "id": 31,
-            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
-          },
           {
             "id": 46,
             "text": "Add autocomplete sql/nosql queries"
@@ -174,6 +170,10 @@
           {
             "id": 20,
             "text": "Fixed issue of sql databases creating databases in the same folder (Causing unrelated dbs to show up in SQLite list of dbs)"
+          },
+          {
+            "id": 31,
+            "text": "Add autoincrement checkbox and option for sql databases in both table_details and define_columns"
           },
           {
             "id": 21,
