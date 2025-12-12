@@ -162,12 +162,16 @@
             "text": "Change the NoSQL query logic in all query tabs to be less strict and allow execution of anything as long as the handler is able to."
           },
           {
+            "id": 71,
+            "text": "Add autoincrement checkbox and option for sql databases in both TableDetails and CreateTableModal"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           },
           {
-            "id": 71,
-            "text": "Add autoincrement checkbox and option for sql databases in both TableDetails and CreateTableModal"
+            "id": 72,
+            "text": "Add Unique checkbox and option for sql databases in both TableDetails and CreateTableModal"
           }
         ],
         "minor": [
@@ -304,7 +308,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 72,
+  "nextTaskId": 73,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
