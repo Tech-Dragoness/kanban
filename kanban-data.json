@@ -166,12 +166,12 @@
             "text": "Add autoincrement checkbox and option for sql databases in both TableDetails and CreateTableModal"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 72,
             "text": "Add Unique checkbox and option for sql databases in both TableDetails and CreateTableModal"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
