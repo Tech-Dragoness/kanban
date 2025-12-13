@@ -66,10 +66,6 @@
         ],
         "minor": [
           {
-            "id": 4,
-            "text": "Ensure renaming/copying of databases is also copying procedures, foreign keys,etc"
-          },
-          {
             "id": 79,
             "text": "Allow modification of table/collection name"
           }
@@ -322,6 +318,14 @@
           {
             "id": 82,
             "text": "Re-added connection strings to all databases"
+          },
+          {
+            "id": 83,
+            "text": "Ensure renaming/copying of databases is also copying procedures, foreign keys,etc"
+          },
+          {
+            "id": 84,
+            "text": "Noted that DuckDb does not enforce varchar length limits. This is not a bug but a feature."
           }
         ]
       }
@@ -336,7 +340,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 83,
+  "nextTaskId": 85,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
