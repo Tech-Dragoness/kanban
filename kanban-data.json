@@ -68,6 +68,10 @@
           {
             "id": 4,
             "text": "Allow modification of database name"
+          },
+          {
+            "id": 79,
+            "text": "Allow modification of table/collection name"
           }
         ]
       }
@@ -178,12 +182,12 @@
             "text": "Add autocomplete sql/nosql queries"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 78,
             "text": "Add ability to manipulate collections in nosql"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
@@ -324,7 +328,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 79,
+  "nextTaskId": 80,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
