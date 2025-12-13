@@ -67,7 +67,7 @@
         "minor": [
           {
             "id": 4,
-            "text": "Allow modification of database name"
+            "text": "Ensure renaming/copying of databases is also copying procedures, foreign keys,etc"
           },
           {
             "id": 79,
