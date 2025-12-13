@@ -72,10 +72,6 @@
           {
             "id": 79,
             "text": "Allow modification of table/collection name"
-          },
-          {
-            "id": 81,
-            "text": "Add the connection strings of databases and tables back"
           }
         ]
       }
@@ -321,7 +317,11 @@
           },
           {
             "id": 80,
-            "text": "Allow modification of database name"
+            "text": "Allowed modification of database name"
+          },
+          {
+            "id": 82,
+            "text": "Re-added connection strings to all databases"
           }
         ]
       }
@@ -336,7 +336,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 82,
+  "nextTaskId": 83,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
