@@ -58,6 +58,10 @@
           {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
+          },
+          {
+            "id": 74,
+            "text": "Add ability to manipulate collections in nosql"
           }
         ],
         "minor": [
@@ -312,7 +316,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 74,
+  "nextTaskId": 75,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
