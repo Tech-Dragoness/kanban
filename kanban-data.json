@@ -62,6 +62,14 @@
           {
             "id": 74,
             "text": "Add ability to manipulate collections in nosql"
+          },
+          {
+            "id": 75,
+            "text": "Add check functionality to sql dbs"
+          },
+          {
+            "id": 76,
+            "text": "Add check functionality in MongoDB"
           }
         ],
         "minor": [
@@ -316,7 +324,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 75,
+  "nextTaskId": 77,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
