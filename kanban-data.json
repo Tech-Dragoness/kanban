@@ -56,10 +56,6 @@
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           },
           {
-            "id": 74,
-            "text": "Add ability to manipulate collections in nosql"
-          },
-          {
             "id": 75,
             "text": "Add check functionality to sql dbs"
           },
