@@ -72,6 +72,10 @@
           {
             "id": 79,
             "text": "Allow modification of table/collection name"
+          },
+          {
+            "id": 81,
+            "text": "Add the connection strings of databases and tables back"
           }
         ]
       }
@@ -332,7 +336,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 81,
+  "nextTaskId": 82,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
