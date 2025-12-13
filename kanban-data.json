@@ -334,6 +334,10 @@
           {
             "id": 86,
             "text": "Added support for varchar and other data types' length and ensured databases adhere to these limits (SQLite does not adhere naturally to varchar limits)"
+          },
+          {
+            "id": 87,
+            "text": "Added pagination of connection strings list and made it be in sync with the paginated databases"
           }
         ]
       }
@@ -348,7 +352,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 87,
+  "nextTaskId": 88,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
