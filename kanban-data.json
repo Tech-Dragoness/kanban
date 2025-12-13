@@ -330,6 +330,10 @@
           {
             "id": 85,
             "text": "Added connection string button to all databases"
+          },
+          {
+            "id": 86,
+            "text": "Added support for varchar and other data types' length and ensured databases adhere to these limits (SQLite does not adhere naturally to varchar limits))"
           }
         ]
       }
@@ -344,7 +348,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 86,
+  "nextTaskId": 87,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
