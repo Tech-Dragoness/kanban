@@ -52,10 +52,6 @@
       "tasks": {
         "major": [
           {
-            "id": 46,
-            "text": "Add autocomplete sql/nosql queries"
-          },
-          {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
           },
@@ -188,6 +184,10 @@
           {
             "id": 77,
             "text": "Add autocomplete sql/nosql queries"
+          },
+          {
+            "id": 78,
+            "text": "Add ability to manipulate collections in nosql"
           }
         ],
         "minor": [
@@ -328,7 +328,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 78,
+  "nextTaskId": 79,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
