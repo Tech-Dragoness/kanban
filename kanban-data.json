@@ -26,10 +26,6 @@
             "text": "Add an undo and redo button that can undo or redo whatever action we had done on dbs or tables (Undo or redo crud operations, renaming, changing structure,etc)"
           },
           {
-            "id": 68,
-            "text": "Check for anomalies that can cause system hangups"
-          },
-          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
@@ -38,7 +34,12 @@
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 68,
+            "text": "Check for anomalies that can cause system hangups"
+          }
+        ]
       }
     },
     {
