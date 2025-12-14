@@ -358,6 +358,10 @@
           {
             "id": 95,
             "text": "Allow modification of table/collection name"
+          },
+          {
+            "id": 96,
+            "text": "Fix the issue with pagination of tables/collections and tables/collections' connection strings"
           }
         ]
       }
@@ -372,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 96,
+  "nextTaskId": 97,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
