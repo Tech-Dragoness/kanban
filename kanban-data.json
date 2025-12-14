@@ -38,6 +38,10 @@
           {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
+          },
+          {
+            "id": 100,
+            "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
           }
         ]
       }
@@ -376,7 +380,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 100,
+  "nextTaskId": 101,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
