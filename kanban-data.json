@@ -74,10 +74,6 @@
             "text": "Fix the issue with connection strings of tables/collections not showing at all"
           },
           {
-            "id": 90,
-            "text": "Fix the issue of PostgreSQL not transferring triggers when renaming/copying tables"
-          },
-          {
             "id": 92,
             "text": "Fix the issue with pagination of tables/collections and tables/collections' connection strings"
           }
@@ -358,6 +354,14 @@
           {
             "id": 93,
             "text": "Fix the issue with DuckDB not marking autoincrement columns as such in copied/renamed tables"
+          },
+          {
+            "id": 94,
+            "text": "Fix the issue of PostgreSQL not transferring triggers when renaming/copying tables"
+          },
+          {
+            "id": 95,
+            "text": "Allow modification of table/collection name"
           }
         ]
       }
@@ -372,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 94,
+  "nextTaskId": 96,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
