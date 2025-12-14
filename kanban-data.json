@@ -30,6 +30,10 @@
             "text": "Check for anomalies that can cause system hangups"
           },
           {
+            "id": 52,
+            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
+          },
+          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
@@ -38,12 +42,7 @@
             "text": "(Something to be done near the end of development to optimize) Is the system lightweight? If not, see where corners can be cut, how to optimize, enhance speed and reduce size."
           }
         ],
-        "minor": [
-          {
-            "id": 52,
-            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
-          }
-        ]
+        "minor": []
       }
     },
     {
