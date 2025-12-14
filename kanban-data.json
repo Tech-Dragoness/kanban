@@ -68,10 +68,6 @@
           {
             "id": 88,
             "text": "Fix the issue with connection strings of tables/collections not showing at all"
-          },
-          {
-            "id": 92,
-            "text": "Fix the issue with pagination of tables/collections and tables/collections' connection strings"
           }
         ]
       }
@@ -362,6 +358,10 @@
           {
             "id": 96,
             "text": "Fix the issue with pagination of tables/collections and tables/collections' connection strings"
+          },
+          {
+            "id": 97,
+            "text": "Fix the issue with connection strings of tables/collections not showing at all"
           }
         ]
       }
@@ -376,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 97,
+  "nextTaskId": 98,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
