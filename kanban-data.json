@@ -60,6 +60,10 @@
           {
             "id": 76,
             "text": "Add check functionality in MongoDB"
+          },
+          {
+            "id": 99,
+            "text": "Add regression test cases for renaming and copying databases and tables"
           }
         ]
       }
@@ -372,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 99,
+  "nextTaskId": 100,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
