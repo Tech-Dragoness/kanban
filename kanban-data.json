@@ -64,12 +64,7 @@
             "text": "Add check functionality in MongoDB"
           }
         ],
-        "minor": [
-          {
-            "id": 88,
-            "text": "Fix the issue with connection strings of tables/collections not showing at all"
-          }
-        ]
+        "minor": []
       }
     },
     {
