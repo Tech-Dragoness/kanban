@@ -68,6 +68,10 @@
           {
             "id": 79,
             "text": "Allow modification of table/collection name"
+          },
+          {
+            "id": 88,
+            "text": "Fix the issue with connection strings of tables/collections not showing at all"
           }
         ]
       }
@@ -352,7 +356,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 88,
+  "nextTaskId": 89,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
