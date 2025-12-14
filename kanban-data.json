@@ -30,10 +30,6 @@
             "text": "Check for anomalies that can cause system hangups"
           },
           {
-            "id": 52,
-            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
-          },
-          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
@@ -63,7 +59,12 @@
             "text": "Add check functionality in MongoDB"
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 52,
+            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
+          }
+        ]
       }
     },
     {
