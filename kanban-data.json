@@ -66,10 +66,6 @@
         ],
         "minor": [
           {
-            "id": 79,
-            "text": "Allow modification of table/collection name"
-          },
-          {
             "id": 88,
             "text": "Fix the issue with connection strings of tables/collections not showing at all"
           },
@@ -352,12 +348,12 @@
             "text": "Fix the issue of MySQL not transferring triggers when renaming/copying tables"
           },
           {
-            "id": 93,
-            "text": "Fix the issue with DuckDB not marking autoincrement columns as such in copied/renamed tables"
-          },
-          {
             "id": 94,
             "text": "Fix the issue of PostgreSQL not transferring triggers when renaming/copying tables"
+          },
+          {
+            "id": 93,
+            "text": "Fix the issue with DuckDB not marking autoincrement columns as such in copied/renamed tables"
           },
           {
             "id": 95,
