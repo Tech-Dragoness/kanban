@@ -358,6 +358,10 @@
           {
             "id": 97,
             "text": "Fix the issue with connection strings of tables/collections not showing at all"
+          },
+          {
+            "id": 98,
+            "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
           }
         ]
       }
@@ -372,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 98,
+  "nextTaskId": 99,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
