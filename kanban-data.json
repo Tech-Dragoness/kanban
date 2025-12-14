@@ -358,6 +358,10 @@
           {
             "id": 91,
             "text": "Fix the issue of MySQL not transferring triggers when renaming/copying tables"
+          },
+          {
+            "id": 93,
+            "text": "Fix the issue with DuckDB not marking autoincrement columns as such in copied/renamed tables"
           }
         ]
       }
@@ -372,7 +376,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 93,
+  "nextTaskId": 94,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
