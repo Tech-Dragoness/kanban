@@ -62,6 +62,10 @@
           {
             "id": 104,
             "text": "Add Procedures support to PostGreSQL"
+          },
+          {
+            "id": 105,
+            "text": "Add Procedures support to DuckDB"
           }
         ],
         "minor": [
@@ -396,7 +400,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 105,
+  "nextTaskId": 106,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
