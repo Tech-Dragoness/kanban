@@ -68,6 +68,10 @@
           {
             "id": 99,
             "text": "Add regression test cases for renaming and copying databases and tables"
+          },
+          {
+            "id": 101,
+            "text": "Add editability to triggers"
           }
         ]
       }
@@ -380,7 +384,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 101,
+  "nextTaskId": 102,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
