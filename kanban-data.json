@@ -62,10 +62,6 @@
           {
             "id": 104,
             "text": "Add Procedures support to PostGreSQL"
-          },
-          {
-            "id": 105,
-            "text": "Add Procedures support to DuckDB"
           }
         ],
         "minor": [
