@@ -78,10 +78,6 @@
             "text": "Add regression test cases for renaming and copying databases and tables"
           },
           {
-            "id": 101,
-            "text": "Add editability to triggers"
-          },
-          {
             "id": 103,
             "text": "Ensure that when selected diagram is changed, that diagram is immediately generates with the selected x and y values otherwise mention that y values can only be 1 and stop at the previous diagram instead of reloading it (For the charts tab)"
           }
