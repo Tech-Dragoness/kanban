@@ -386,6 +386,10 @@
           {
             "id": 107,
             "text": "Add editability to triggers"
+          },
+          {
+            "id": 108,
+            "text": "Ensure that when selected diagram is changed, that diagram is immediately generates with the selected x and y values otherwise mention that y values can only be 1 and stop at the previous diagram instead of reloading it (For the charts tab)"
           }
         ]
       }
@@ -400,7 +404,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 108,
+  "nextTaskId": 109,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
