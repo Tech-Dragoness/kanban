@@ -58,6 +58,10 @@
           {
             "id": 75,
             "text": "Add check functionality to sql dbs"
+          },
+          {
+            "id": 104,
+            "text": "Add Procedures support to PostGreSQL"
           }
         ],
         "minor": [
@@ -392,7 +396,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 104,
+  "nextTaskId": 105,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
