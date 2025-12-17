@@ -58,10 +58,6 @@
           {
             "id": 38,
             "text": "Add aggregation ability (Check out how that is done, make a tab for this)"
-          },
-          {
-            "id": 75,
-            "text": "Add check functionality to sql dbs"
           }
         ],
         "minor": [
@@ -190,12 +186,12 @@
             "text": "Add Procedures support to PostGreSQL"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 112,
             "text": "Add check functionality to sql dbs"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
