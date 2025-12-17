@@ -68,6 +68,10 @@
           {
             "id": 99,
             "text": "Add regression test cases for renaming and copying databases and tables"
+          },
+          {
+            "id": 113,
+            "text": "Ensure checks also get transferred when tables/dbs are being copied/renamed"
           }
         ]
       }
@@ -404,7 +408,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 113,
+  "nextTaskId": 114,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
