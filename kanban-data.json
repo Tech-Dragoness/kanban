@@ -62,10 +62,6 @@
         ],
         "minor": [
           {
-            "id": 76,
-            "text": "Add check functionality in MongoDB"
-          },
-          {
             "id": 99,
             "text": "Add regression test cases for renaming and copying databases and tables"
           },
@@ -194,12 +190,12 @@
             "text": "Add check functionality to sql dbs"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 114,
             "text": "Add check functionality in MongoDB"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
