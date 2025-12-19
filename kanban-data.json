@@ -64,10 +64,6 @@
           {
             "id": 99,
             "text": "Add regression test cases for renaming and copying databases and tables"
-          },
-          {
-            "id": 113,
-            "text": "Ensure checks also get transferred when tables/dbs are being copied/renamed"
           }
         ]
       }
