@@ -194,12 +194,12 @@
             "text": "Add check functionality in MongoDB"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 115,
             "text": "Ensure checks also get transferred when tables/dbs are being copied/renamed"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
