@@ -402,6 +402,10 @@
           {
             "id": 116,
             "text": "Added aggregation tab"
+          },
+          {
+            "id": 118,
+            "text": "Add regression test cases for renaming and copying databases and tables"
           }
         ]
       }
@@ -416,7 +420,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 118,
+  "nextTaskId": 119,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
