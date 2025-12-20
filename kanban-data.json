@@ -60,7 +60,12 @@
             "text": "Add aggregation ability for nosql dbs"
           }
         ],
-        "minor": []
+        "minor": [
+          {
+            "id": 119,
+            "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
+          }
+        ]
       }
     },
     {
@@ -415,7 +420,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 119,
+  "nextTaskId": 120,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
