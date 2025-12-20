@@ -60,12 +60,7 @@
             "text": "Add aggregation ability for nosql dbs"
           }
         ],
-        "minor": [
-          {
-            "id": 99,
-            "text": "Add regression test cases for renaming and copying databases and tables"
-          }
-        ]
+        "minor": []
       }
     },
     {
