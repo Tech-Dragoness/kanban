@@ -46,16 +46,16 @@
           {
             "id": 2,
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
+          },
+          {
+            "id": 110,
+            "text": "Add normalization ability"
           }
         ],
         "minor": [
           {
             "id": 119,
             "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
-          },
-          {
-            "id": 110,
-            "text": "Add normalization ability"
           }
         ]
       }
@@ -420,7 +420,7 @@
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
-    "2-major": false,
+    "2-major": true,
     "2-minor": false,
     "3-major": true,
     "3-minor": false,
