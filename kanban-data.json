@@ -196,6 +196,10 @@
           {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
+          },
+          {
+            "id": 120,
+            "text": "Add aggregation ability for nosql dbs"
           }
         ],
         "minor": [
@@ -416,7 +420,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 120,
+  "nextTaskId": 121,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
