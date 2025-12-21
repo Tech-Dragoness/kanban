@@ -50,10 +50,6 @@
           {
             "id": 2,
             "text": "Add import and export tabs in home for importing and exporting in sql format (Check if the same can be done for NoSQL, will likely use json format there)"
-          },
-          {
-            "id": 38,
-            "text": "Add aggregation ability for nosql dbs"
           }
         ],
         "minor": [
