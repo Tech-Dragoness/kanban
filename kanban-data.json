@@ -46,6 +46,10 @@
           {
             "id": 110,
             "text": "Add normalization ability"
+          },
+          {
+            "id": 123,
+            "text": "Add support for universal json in nosql dbs"
           }
         ],
         "minor": [
@@ -420,7 +424,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 123,
+  "nextTaskId": 124,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
