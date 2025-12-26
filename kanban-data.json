@@ -194,12 +194,16 @@
             "text": "Add aggregation ability for nosql dbs"
           },
           {
+            "id": 121,
+            "text": "Added import/export tabs, all dbs both sql and nosql can import and export tables of their own type"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           },
           {
-            "id": 121,
-            "text": "Added import/export tabs, all dbs both sql and nosql can import and export tables of their own type"
+            "id": 122,
+            "text": "Added support for universal json in sql dbs"
           }
         ],
         "minor": [
@@ -420,13 +424,13 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 122,
+  "nextTaskId": 123,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
     "2-major": false,
     "2-minor": false,
-    "3-major": true,
+    "3-major": false,
     "3-minor": false,
     "5-major": true
   }
