@@ -208,6 +208,10 @@
           {
             "id": 126,
             "text": "Added support for views"
+          },
+          {
+            "id": 127,
+            "text": "Added support for partitions to those tables that support it"
           }
         ],
         "minor": [
@@ -428,7 +432,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 127,
+  "nextTaskId": 128,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
