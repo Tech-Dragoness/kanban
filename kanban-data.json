@@ -204,6 +204,10 @@
           {
             "id": 122,
             "text": "Added support for universal json in sql dbs"
+          },
+          {
+            "id": 124,
+            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           }
         ],
         "minor": [
@@ -424,7 +428,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 124,
+  "nextTaskId": 125,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
