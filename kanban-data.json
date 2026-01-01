@@ -24,10 +24,6 @@
         ],
         "minor": [
           {
-            "id": 68,
-            "text": "Check for anomalies that can cause system hangups"
-          },
-          {
             "id": 26,
             "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           }
@@ -48,6 +44,10 @@
           {
             "id": 119,
             "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
+          },
+          {
+            "id": 68,
+            "text": "Check for anomalies that can cause system hangups"
           }
         ]
       }
@@ -202,16 +202,16 @@
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 126,
             "text": "Added support for views"
           },
           {
             "id": 127,
             "text": "Added support for partitions to those tables that support it"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
