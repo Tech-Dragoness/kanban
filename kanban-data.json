@@ -204,6 +204,10 @@
           {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
+          },
+          {
+            "id": 125,
+            "text": "Add support for universal json in nosql dbs"
           }
         ],
         "minor": [
@@ -424,7 +428,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 125,
+  "nextTaskId": 126,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
