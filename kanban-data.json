@@ -40,10 +40,6 @@
       "tasks": {
         "major": [
           {
-            "id": 1,
-            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
-          },
-          {
             "id": 110,
             "text": "Add normalization ability"
           },
