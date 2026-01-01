@@ -42,10 +42,6 @@
           {
             "id": 110,
             "text": "Add normalization ability"
-          },
-          {
-            "id": 123,
-            "text": "Add support for universal json in nosql dbs"
           }
         ],
         "minor": [
@@ -202,12 +198,12 @@
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 125,
             "text": "Add support for universal json in nosql dbs"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
