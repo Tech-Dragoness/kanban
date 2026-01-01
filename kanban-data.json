@@ -194,16 +194,20 @@
             "text": "Added support for universal json in sql dbs"
           },
           {
-            "id": 124,
-            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
-          },
-          {
             "id": 125,
             "text": "Add support for universal json in nosql dbs"
           },
           {
+            "id": 124,
+            "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
+          },
+          {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
+          },
+          {
+            "id": 126,
+            "text": "Added support for views"
           }
         ],
         "minor": [
@@ -424,7 +428,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 126,
+  "nextTaskId": 127,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
