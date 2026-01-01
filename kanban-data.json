@@ -198,16 +198,16 @@
             "text": "Added import/export tabs, all dbs both sql and nosql can import and export tables of their own type"
           },
           {
-            "id": 19,
-            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
-          },
-          {
             "id": 122,
             "text": "Added support for universal json in sql dbs"
           },
           {
             "id": 124,
             "text": "Ability to convert databases from one form to another easily, including from SQL to NoSQL but not from NoSQL to SQL. (Use conversion to json and dynamic figuring out of data types)"
+          },
+          {
+            "id": 19,
+            "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
           }
         ],
         "minor": [
