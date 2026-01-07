@@ -215,6 +215,10 @@
           {
             "id": 128,
             "text": "Created Logo"
+          },
+          {
+            "id": 129,
+            "text": "Uploaded to PyPI, now installable via pip install dbdragoness"
           }
         ],
         "minor": [
@@ -435,7 +439,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 129,
+  "nextTaskId": 130,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
