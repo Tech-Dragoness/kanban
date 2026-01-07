@@ -219,6 +219,10 @@
           {
             "id": 129,
             "text": "Uploaded to PyPI, now installable via pip install dbdragoness"
+          },
+          {
+            "id": 130,
+            "text": "Uploaded to GitHub and marked as a release"
           }
         ],
         "minor": [
@@ -439,7 +443,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 130,
+  "nextTaskId": 131,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
