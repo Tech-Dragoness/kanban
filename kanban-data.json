@@ -211,6 +211,10 @@
           {
             "id": 19,
             "text": "Performed rigorous regression testing at all steps, at the end of every requirement completion."
+          },
+          {
+            "id": 128,
+            "text": "Created Logo"
           }
         ],
         "minor": [
@@ -431,7 +435,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 128,
+  "nextTaskId": 129,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
