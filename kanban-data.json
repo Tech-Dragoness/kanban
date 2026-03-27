@@ -403,6 +403,10 @@
             "text": "Fix the issue with connection strings of tables/collections not showing at all"
           },
           {
+            "id": 132,
+            "text": "Added support for composite keys"
+          },
+          {
             "id": 98,
             "text": "Add function to handler to check whether user needs to be signed in or not for showing the sign out button"
           },
@@ -413,10 +417,6 @@
           {
             "id": 107,
             "text": "Add editability to triggers"
-          },
-          {
-            "id": 132,
-            "text": "Added support for composite keys"
           },
           {
             "id": 108,
