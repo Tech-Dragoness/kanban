@@ -43,10 +43,6 @@
           {
             "id": 68,
             "text": "Check for anomalies that can cause system hangups"
-          },
-          {
-            "id": 26,
-            "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           }
         ]
       }
@@ -207,6 +203,10 @@
           {
             "id": 127,
             "text": "Added support for partitions to those tables that support it"
+          },
+          {
+            "id": 131,
+            "text": "(Something to be done near the end of development to optimize) Ensure that the system will work on all or at least most platforms"
           },
           {
             "id": 19,
@@ -429,6 +429,10 @@
           {
             "id": 118,
             "text": "Add regression test cases for renaming and copying databases and tables"
+          },
+          {
+            "id": 132,
+            "text": "Added support for composite keys"
           }
         ]
       }
@@ -443,7 +447,7 @@
     }
   ],
   "nextColumnId": 6,
-  "nextTaskId": 131,
+  "nextTaskId": 133,
   "dropdownStates": {
     "1-major": false,
     "1-minor": false,
