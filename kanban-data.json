@@ -6,6 +6,10 @@
       "tasks": {
         "major": [
           {
+            "id": 110,
+            "text": "Add normalization ability"
+          },
+          {
             "id": 65,
             "text": "Add Firebase Firestore support to NoSQL dbs"
           },
@@ -30,10 +34,6 @@
       "name": "In Progress",
       "tasks": {
         "major": [
-          {
-            "id": 110,
-            "text": "Add normalization ability"
-          },
           {
             "id": 68,
             "text": "Check for anomalies that can cause system hangups"
