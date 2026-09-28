@@ -6,10 +6,6 @@
       "tasks": {
         "major": [
           {
-            "id": 110,
-            "text": "Add normalization ability"
-          },
-          {
             "id": 65,
             "text": "Add Firebase Firestore support to NoSQL dbs"
           },
@@ -40,6 +36,10 @@
           }
         ],
         "minor": [
+          {
+            "id": 110,
+            "text": "Add normalization ability"
+          },
           {
             "id": 119,
             "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
