@@ -33,13 +33,13 @@
           {
             "id": 110,
             "text": "Add normalization ability"
-          }
-        ],
-        "minor": [
+          },
           {
             "id": 68,
             "text": "Check for anomalies that can cause system hangups"
-          },
+          }
+        ],
+        "minor": [
           {
             "id": 119,
             "text": "Remove all database-specific code and database names from all places and shift them to their own handlers"
